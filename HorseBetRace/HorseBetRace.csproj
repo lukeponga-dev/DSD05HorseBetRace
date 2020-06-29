@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\AllPunters\Bet.cs" />
     <Compile Include="Data\AllPunters\Factory.cs" />
     <Compile Include="Data\AllPunters\Punter.cs" />
     <Compile Include="Form1.cs">
@@ -54,7 +55,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Horses.cs" />
+    <Compile Include="Horse.cs" />
     <Compile Include="MainResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
