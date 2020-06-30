@@ -51,6 +51,54 @@ namespace HorseBetRace
             MyPunters[2].MyRadioButton.Text = MyPunters[2].PunterName + " has $" + MyPunters[2].Cash;
         }
 
+        public void GameOverCheck() // Checks to see if the game is over
+        {
+            if (MyPunters[0].Cash <= 0 && MyPunters[1].Cash <= 0 && MyPunters[2].Cash <= 0)
+            {
+                MessageBox.Show(@"All of your bettors are broke! Try Again..");
+                LabelsClear();
+         //       ResetRace();
+                this.Close();
+            }
+        }
+
+        public void BettorBroke() // Checks to see if any punters are broke and cant continue
+        {
+            if (MyPunters[0].Cash <= 0) // Joe
+            {
+                lblJoe.Text = "Joe is now broke and cant continue betting";
+                rbJoe.Enabled = false;
+            }
+
+            if (MyPunters[1].Cash <= 0) // Bob
+            {
+                lblBob.Text = "Bob is now broke and cant continue betting";
+                rbBob.Enabled = false;
+            }
+
+            if (MyPunters[2].Cash <= 0) // Al
+            {
+                lblAl.Text = "Al is now broke and cant continue betting";
+                rbAl.Enabled = false;
+            }
+        }
+        public void ResetBetAmount() // Rest the bet amounts to zero if the punter is busted
+        {
+            if (MyPunters[0].Cash == 0)
+            {
+                MyPunters[0].MyBet.Amount = 0;
+            }
+
+            if (MyPunters[1].Cash == 0)
+            {
+                MyPunters[1].MyBet.Amount = 0;
+            }
+
+            if (MyPunters[2].Cash == 0)
+            {
+                MyPunters[2].MyBet.Amount = 0;
+            }
+        }
         public void HorsesRace() // Instantiate the Horses
         {
             HorsesArray[0] = new Horse
@@ -106,6 +154,30 @@ namespace HorseBetRace
 
             MyPunters[punter].PlaceBet((int)nudCash.Value, (int)nudHorseNumber.Value - 1); // Updates the bet amount and horse number using the Placebet in punter class
 
+        }
+
+        private void rbJoe_CheckedChanged(object sender, EventArgs e)
+        {
+            //Show that Joe is betting in the bet label
+            lblBettor.Text = MyPunters[0].PunterName;
+            //Sets the maxinum bet
+            nudCash.Maximum = MyPunters[0].Cash;
+        }
+
+        private void rbBob_CheckedChanged(object sender, EventArgs e)
+        {
+            //Show that Bob is betting in the bet label 
+            lblBettor.Text = MyPunters[1].PunterName;
+            //Sets the maxinum bet
+            nudCash.Maximum = MyPunters[1].Cash;
+        }
+
+        private void rbAl_CheckedChanged(object sender, EventArgs e)
+        {
+            //Show that Al is betting in the bet label 
+            lblBettor.Text = MyPunters[2].PunterName;
+            //Sets the maxinum bet
+            nudCash.Maximum = MyPunters[2].Cash;
         }
     }
 }

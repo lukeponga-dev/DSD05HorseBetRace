@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRace = new System.Windows.Forms.Button();
             this.btnBet = new System.Windows.Forms.Button();
             this.nudHorseNumber = new System.Windows.Forms.NumericUpDown();
             this.nudCash = new System.Windows.Forms.NumericUpDown();
@@ -45,11 +46,10 @@
             this.pbHorse3 = new System.Windows.Forms.PictureBox();
             this.pbHorse4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblJoe = new System.Windows.Forms.Label();
-            this.lblBob = new System.Windows.Forms.Label();
             this.lblAl = new System.Windows.Forms.Label();
-            this.btnRace = new System.Windows.Forms.Button();
+            this.lblBob = new System.Windows.Forms.Label();
+            this.lblJoe = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHorseNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCash)).BeginInit();
@@ -79,6 +79,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(160, 272);
             this.panel1.TabIndex = 0;
+            // 
+            // btnRace
+            // 
+            this.btnRace.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRace.Location = new System.Drawing.Point(11, 218);
+            this.btnRace.Name = "btnRace";
+            this.btnRace.Size = new System.Drawing.Size(112, 38);
+            this.btnRace.TabIndex = 21;
+            this.btnRace.Text = "Race";
+            this.btnRace.UseVisualStyleBackColor = false;
             // 
             // btnBet
             // 
@@ -160,6 +171,7 @@
             this.rbAl.TabStop = true;
             this.rbAl.Text = "Al";
             this.rbAl.UseVisualStyleBackColor = false;
+            this.rbAl.CheckedChanged += new System.EventHandler(this.rbAl_CheckedChanged);
             // 
             // rbBob
             // 
@@ -173,6 +185,7 @@
             this.rbBob.TabStop = true;
             this.rbBob.Text = "Bob";
             this.rbBob.UseVisualStyleBackColor = false;
+            this.rbBob.CheckedChanged += new System.EventHandler(this.rbBob_CheckedChanged);
             // 
             // rbJoe
             // 
@@ -186,6 +199,7 @@
             this.rbJoe.TabStop = true;
             this.rbJoe.Text = "Joe";
             this.rbJoe.UseVisualStyleBackColor = false;
+            this.rbJoe.CheckedChanged += new System.EventHandler(this.rbJoe_CheckedChanged);
             // 
             // pbRaceTrack
             // 
@@ -250,23 +264,14 @@
             this.panel2.Size = new System.Drawing.Size(160, 105);
             this.panel2.TabIndex = 6;
             // 
-            // label2
+            // lblAl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Bet";
-            // 
-            // lblJoe
-            // 
-            this.lblJoe.AutoSize = true;
-            this.lblJoe.Location = new System.Drawing.Point(8, 37);
-            this.lblJoe.Name = "lblJoe";
-            this.lblJoe.Size = new System.Drawing.Size(117, 13);
-            this.lblJoe.TabIndex = 22;
-            this.lblJoe.Text = "Joe hasn\'t placed a bet";
+            this.lblAl.AutoSize = true;
+            this.lblAl.Location = new System.Drawing.Point(8, 83);
+            this.lblAl.Name = "lblAl";
+            this.lblAl.Size = new System.Drawing.Size(109, 13);
+            this.lblAl.TabIndex = 24;
+            this.lblAl.Text = "Al hasn\'t placed a bet";
             // 
             // lblBob
             // 
@@ -277,25 +282,23 @@
             this.lblBob.TabIndex = 23;
             this.lblBob.Text = "Bob hasn\'t placed a bet";
             // 
-            // lblAl
+            // lblJoe
             // 
-            this.lblAl.AutoSize = true;
-            this.lblAl.Location = new System.Drawing.Point(8, 83);
-            this.lblAl.Name = "lblAl";
-            this.lblAl.Size = new System.Drawing.Size(109, 13);
-            this.lblAl.TabIndex = 24;
-            this.lblAl.Text = "Al hasn\'t placed a bet";
+            this.lblJoe.AutoSize = true;
+            this.lblJoe.Location = new System.Drawing.Point(8, 37);
+            this.lblJoe.Name = "lblJoe";
+            this.lblJoe.Size = new System.Drawing.Size(117, 13);
+            this.lblJoe.TabIndex = 22;
+            this.lblJoe.Text = "Joe hasn\'t placed a bet";
             // 
-            // btnRace
+            // label2
             // 
-            this.btnRace.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRace.Location = new System.Drawing.Point(11, 218);
-            this.btnRace.Name = "btnRace";
-            this.btnRace.Size = new System.Drawing.Size(112, 38);
-            this.btnRace.TabIndex = 21;
-            this.btnRace.Text = "Race";
-            this.btnRace.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Bet";
             // 
             // Form1
             // 
