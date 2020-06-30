@@ -90,6 +90,7 @@
             this.btnBet.TabIndex = 20;
             this.btnBet.Text = "Place Bet";
             this.btnBet.UseVisualStyleBackColor = false;
+            this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
             // 
             // nudHorseNumber
             // 

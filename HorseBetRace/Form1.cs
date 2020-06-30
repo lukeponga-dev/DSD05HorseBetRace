@@ -87,8 +87,25 @@ namespace HorseBetRace
             };
         }
 
+        private void btnBet_Click(object sender, EventArgs e)
+        {
+            var punter = 0;
 
+            if (rbJoe.Checked)
+            {
+                punter = 0;
+            }
+            else if (rbBob.Checked)
+            {
+                punter = 1;
+            }
+            else if (rbAl.Checked)
+            {
+                punter = 2;
+            }
 
+            MyPunters[punter].PlaceBet((int)nudCash.Value, (int)nudHorseNumber.Value - 1); // Updates the bet amount and horse number using the Placebet in punter class
 
+        }
     }
 }
