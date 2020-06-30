@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRace = new System.Windows.Forms.Button();
             this.btnBet = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             this.lblBob = new System.Windows.Forms.Label();
             this.lblJoe = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHorseNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCash)).BeginInit();
@@ -90,6 +92,7 @@
             this.btnRace.TabIndex = 21;
             this.btnRace.Text = "Race";
             this.btnRace.UseVisualStyleBackColor = false;
+            this.btnRace.Click += new System.EventHandler(this.btnRace_Click);
             // 
             // btnBet
             // 
@@ -300,6 +303,10 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Bet";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +360,7 @@
         private System.Windows.Forms.Label lblAl;
         private System.Windows.Forms.Label lblBob;
         private System.Windows.Forms.Button btnRace;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

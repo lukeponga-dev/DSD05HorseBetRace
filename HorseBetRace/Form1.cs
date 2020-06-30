@@ -13,6 +13,7 @@ namespace HorseBetRace
 {
     public partial class Form1 : Form
     {
+
         Punter[] MyPunters = new Punter[3];
         Horse[] HorsesArray = new Horse[4];
 
@@ -57,7 +58,7 @@ namespace HorseBetRace
             {
                 MessageBox.Show(@"All of your bettors are broke! Try Again..");
                 LabelsClear();
-         //       ResetRace();
+                ResetRace();
                 this.Close();
             }
         }
@@ -82,6 +83,7 @@ namespace HorseBetRace
                 rbAl.Enabled = false;
             }
         }
+
         public void ResetBetAmount() // Rest the bet amounts to zero if the punter is busted
         {
             if (MyPunters[0].Cash == 0)
@@ -99,11 +101,12 @@ namespace HorseBetRace
                 MyPunters[2].MyBet.Amount = 0;
             }
         }
+
         public void HorsesRace() // Instantiate the Horses
         {
             HorsesArray[0] = new Horse
             {
-                 Mypb = pbHorse1,
+                Mypb = pbHorse1,
                 StartingPosition = pbHorse1.Left,
                 HorseName = "#1",
                 RaceTrackLength = pbRaceTrack.Width - pbHorse1.Width,
@@ -152,7 +155,10 @@ namespace HorseBetRace
                 punter = 2;
             }
 
-            MyPunters[punter].PlaceBet((int)nudCash.Value, (int)nudHorseNumber.Value - 1); // Updates the bet amount and horse number using the Placebet in punter class
+            MyPunters[punter]
+                .PlaceBet((int) nudCash.Value,
+                    (int) nudHorseNumber.Value -
+                    1); // Updates the bet amount and horse number using the Placebet in punter class
 
         }
 
@@ -179,5 +185,100 @@ namespace HorseBetRace
             //Sets the maxinum bet
             nudCash.Maximum = MyPunters[2].Cash;
         }
+
+        public void ResetRace() //Reset horses back to start
+        {
+            //resets the text box
+            MyPunters[0].MyLabel.ResetText();
+            MyPunters[1].MyLabel.ResetText();
+            MyPunters[2].MyLabel.ResetText();
+            //resets the vet amounts to zero
+            MyPunters[0].MyBet.Amount = 0;
+            MyPunters[1].MyBet.Amount = 0;
+            MyPunters[2].MyBet.Amount = 0;
+
+            foreach (Horse t in HorsesArray)
+            {
+                t.Mypb.Left = t.StartingPosition;
+            }
+        }
+
+        private void btnRace_Click(object sender, EventArgs e)
+        {
+            //Check if the punters have enough cash to proceed with the race if not show warning
+            if (MyPunters[0].Cash < nudCash.Value && rbJoe.Enabled)
+            {
+                MessageBox.Show(@"Sorry Joe doesn't have enough cash to proceed");
+                timer1.Enabled = false;
+            }
+
+            if (MyPunters[1].Cash < nudCash.Value && rbBob.Enabled)
+            {
+                MessageBox.Show(@"Sorry Bob doesn't have enough cash to proceed");
+                timer1.Enabled = false;
+            }
+
+            if (MyPunters[2].Cash < nudCash.Value && rbAl.Enabled)
+            {
+                MessageBox.Show(@"Sorry Al doesn't have enough cash to proceed");
+                timer1.Enabled = false;
+            }
+            else
+            {
+                //Reset starting positions
+                foreach (Horse t in HorsesArray)
+                {
+                    t.Mypb.Left = t.StartingPosition;
+                }
+
+                //start timer for the race
+                timer1.Enabled = true;
+                btnRace.Enabled = false;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // Run the timer for the race and return the winner and bet results
+            try
+            {
+                int winner;
+
+                for (int i = 0; i < HorsesArray.Length; i++)
+                {
+                    if (HorsesArray[i].Run((pbRaceTrack))
+                    ) // use Horse.run class for race if true return a winner and stop timer event
+                    {
+                        winner = i;
+                        timer1.Enabled = false;
+                        MessageBox.Show(@"Horse #" + (winner + 1) + " Wins");
+
+                        for (int j = 0; j < MyPunters.Length; j++)
+                        {
+                            if (MyPunters[j].MyBet.PayOut(winner) != 0)
+                            {
+                                MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner);
+                                MyPunters[j].MyRadioButton.Text =
+                                    MyPunters[j].PunterName + " has $" + MyPunters[j].Cash;
+                            }
+                        }
+
+                        ResetRace();
+                        ResetBetAmount();
+                        BettorBroke();
+                        GameOverCheck();
+
+                        break;
+                    }
+                }
+            }
+
+            catch
+            {
+                MessageBox.Show(@"A bet was not placed");
+            }
+        }
+
+
     }
 }
