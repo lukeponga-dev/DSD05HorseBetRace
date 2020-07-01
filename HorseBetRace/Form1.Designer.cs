@@ -53,7 +53,7 @@
             this.pbHorse1 = new System.Windows.Forms.PictureBox();
             this.pbRaceTrack = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHorseNumber)).BeginInit();
@@ -82,7 +82,7 @@
             this.panel1.Controls.Add(this.rbJoe);
             this.panel1.Location = new System.Drawing.Point(-5, 293);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 110);
+            this.panel1.Size = new System.Drawing.Size(379, 96);
             this.panel1.TabIndex = 0;
             // 
             // btnBet
@@ -240,15 +240,15 @@
             this.panel2.Controls.Add(this.lblBob);
             this.panel2.Controls.Add(this.lblJoe);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(426, 293);
+            this.panel2.Location = new System.Drawing.Point(380, 293);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(160, 121);
+            this.panel2.Size = new System.Drawing.Size(160, 96);
             this.panel2.TabIndex = 6;
             // 
             // lblAl
             // 
             this.lblAl.AutoSize = true;
-            this.lblAl.Location = new System.Drawing.Point(8, 83);
+            this.lblAl.Location = new System.Drawing.Point(8, 65);
             this.lblAl.Name = "lblAl";
             this.lblAl.Size = new System.Drawing.Size(109, 13);
             this.lblAl.TabIndex = 24;
@@ -257,7 +257,7 @@
             // lblBob
             // 
             this.lblBob.AutoSize = true;
-            this.lblBob.Location = new System.Drawing.Point(8, 60);
+            this.lblBob.Location = new System.Drawing.Point(8, 44);
             this.lblBob.Name = "lblBob";
             this.lblBob.Size = new System.Drawing.Size(119, 13);
             this.lblBob.TabIndex = 23;
@@ -266,7 +266,7 @@
             // lblJoe
             // 
             this.lblJoe.AutoSize = true;
-            this.lblJoe.Location = new System.Drawing.Point(8, 37);
+            this.lblJoe.Location = new System.Drawing.Point(8, 25);
             this.lblJoe.Name = "lblJoe";
             this.lblJoe.Size = new System.Drawing.Size(117, 13);
             this.lblJoe.TabIndex = 22;
@@ -343,32 +343,33 @@
             // 
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(12, 98);
+            this.button1.Location = new System.Drawing.Point(158, 39);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 38);
             this.button1.TabIndex = 22;
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnQuit
             // 
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(12, 161);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 38);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Race";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnQuit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnQuit.Location = new System.Drawing.Point(83, 95);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(112, 38);
+            this.btnQuit.TabIndex = 23;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.UseVisualStyleBackColor = false;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnRace);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btnQuit);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Location = new System.Drawing.Point(603, 88);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(141, 354);
+            this.panel3.Size = new System.Drawing.Size(273, 223);
             this.panel3.TabIndex = 24;
             // 
             // Form1
@@ -429,7 +430,7 @@
         private System.Windows.Forms.Button btnRace;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Panel panel3;
     }
 }

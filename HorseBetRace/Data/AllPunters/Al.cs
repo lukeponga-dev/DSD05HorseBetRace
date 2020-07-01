@@ -12,7 +12,7 @@ namespace HorseBetRace.Data.AllPunters
         public Al() // Sets up the punter Al
         {
             PunterName = "Al";
-            Cash = 45;
+            Cash = 50;
         }
     }
 }

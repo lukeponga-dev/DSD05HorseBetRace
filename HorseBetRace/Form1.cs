@@ -16,7 +16,6 @@ namespace HorseBetRace
     {
         Punter[] MyPunters = new Punter[3];
         Horse[] HorsesArray = new Horse[4];
-        Horse myHorse = new Horse();
 
         public Form1()
         {
@@ -327,8 +326,13 @@ namespace HorseBetRace
                 MessageBox.Show(@"All of your bettors are broke! Try Again..");
                 LabelsClear();
                 ResetRace();
-                this.Close();
-            }
+                this.Close();}
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            // Closes the form 
+            this.Close();
         }
     }
 }
