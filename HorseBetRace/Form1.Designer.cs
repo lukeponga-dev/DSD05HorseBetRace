@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblBettor = new System.Windows.Forms.Label();
             this.lblMaxBet = new System.Windows.Forms.Label();
-            this.lblMinimumBet = new System.Windows.Forms.Label();
+            this.lblPunter = new System.Windows.Forms.Label();
             this.rbAl = new System.Windows.Forms.RadioButton();
             this.rbBob = new System.Windows.Forms.RadioButton();
             this.rbJoe = new System.Windows.Forms.RadioButton();
@@ -52,6 +52,9 @@
             this.pbHorse2 = new System.Windows.Forms.PictureBox();
             this.pbHorse1 = new System.Windows.Forms.PictureBox();
             this.pbRaceTrack = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHorseNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCash)).BeginInit();
@@ -61,32 +64,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHorse2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHorse1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRaceTrack)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Pink;
-            this.panel1.Controls.Add(this.btnRace);
             this.panel1.Controls.Add(this.btnBet);
             this.panel1.Controls.Add(this.nudHorseNumber);
             this.panel1.Controls.Add(this.nudCash);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblBettor);
             this.panel1.Controls.Add(this.lblMaxBet);
-            this.panel1.Controls.Add(this.lblMinimumBet);
+            this.panel1.Controls.Add(this.lblPunter);
             this.panel1.Controls.Add(this.rbAl);
             this.panel1.Controls.Add(this.rbBob);
             this.panel1.Controls.Add(this.rbJoe);
             this.panel1.Location = new System.Drawing.Point(-5, 293);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 157);
+            this.panel1.Size = new System.Drawing.Size(379, 110);
             this.panel1.TabIndex = 0;
             // 
             // btnRace
             // 
             this.btnRace.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnRace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRace.Location = new System.Drawing.Point(301, 109);
+            this.btnRace.Location = new System.Drawing.Point(12, 39);
             this.btnRace.Name = "btnRace";
             this.btnRace.Size = new System.Drawing.Size(112, 38);
             this.btnRace.TabIndex = 21;
@@ -98,7 +101,7 @@
             // 
             this.btnBet.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnBet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBet.Location = new System.Drawing.Point(301, 65);
+            this.btnBet.Location = new System.Drawing.Point(262, 51);
             this.btnBet.Name = "btnBet";
             this.btnBet.Size = new System.Drawing.Size(112, 38);
             this.btnBet.TabIndex = 20;
@@ -108,7 +111,7 @@
             // 
             // nudHorseNumber
             // 
-            this.nudHorseNumber.Location = new System.Drawing.Point(380, 37);
+            this.nudHorseNumber.Location = new System.Drawing.Point(337, 25);
             this.nudHorseNumber.Maximum = new decimal(new int[] {
             4,
             0,
@@ -130,12 +133,12 @@
             // 
             // nudCash
             // 
-            this.nudCash.Location = new System.Drawing.Point(380, 14);
-            this.nudCash.Maximum = new decimal(new int[] {
-            45,
+            this.nudCash.Increment = new decimal(new int[] {
+            5,
             0,
             0,
             0});
+            this.nudCash.Location = new System.Drawing.Point(337, 3);
             this.nudCash.Name = "nudCash";
             this.nudCash.Size = new System.Drawing.Size(37, 20);
             this.nudCash.TabIndex = 18;
@@ -143,16 +146,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(298, 39);
+            this.label1.Location = new System.Drawing.Point(218, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Horse number #";
+            this.label1.Text = "Amount Horse number #";
             // 
             // lblBettor
             // 
             this.lblBettor.AutoSize = true;
-            this.lblBettor.Location = new System.Drawing.Point(337, 16);
+            this.lblBettor.Location = new System.Drawing.Point(296, 5);
             this.lblBettor.Name = "lblBettor";
             this.lblBettor.Size = new System.Drawing.Size(44, 13);
             this.lblBettor.TabIndex = 16;
@@ -162,27 +165,27 @@
             // 
             this.lblMaxBet.AutoSize = true;
             this.lblMaxBet.BackColor = System.Drawing.Color.Pink;
-            this.lblMaxBet.Location = new System.Drawing.Point(107, 14);
+            this.lblMaxBet.Location = new System.Drawing.Point(110, 8);
             this.lblMaxBet.Name = "lblMaxBet";
             this.lblMaxBet.Size = new System.Drawing.Size(46, 13);
             this.lblMaxBet.TabIndex = 15;
             this.lblMaxBet.Text = "Max Bet";
             this.lblMaxBet.Visible = false;
             // 
-            // lblMinimumBet
+            // lblPunter
             // 
-            this.lblMinimumBet.AutoSize = true;
-            this.lblMinimumBet.Location = new System.Drawing.Point(8, 14);
-            this.lblMinimumBet.Name = "lblMinimumBet";
-            this.lblMinimumBet.Size = new System.Drawing.Size(35, 13);
-            this.lblMinimumBet.TabIndex = 9;
-            this.lblMinimumBet.Text = "Bettor";
+            this.lblPunter.AutoSize = true;
+            this.lblPunter.Location = new System.Drawing.Point(14, 8);
+            this.lblPunter.Name = "lblPunter";
+            this.lblPunter.Size = new System.Drawing.Size(35, 13);
+            this.lblPunter.TabIndex = 9;
+            this.lblPunter.Text = "Bettor";
             // 
             // rbAl
             // 
             this.rbAl.AutoSize = true;
             this.rbAl.BackColor = System.Drawing.Color.Pink;
-            this.rbAl.Location = new System.Drawing.Point(11, 85);
+            this.rbAl.Location = new System.Drawing.Point(17, 63);
             this.rbAl.Margin = new System.Windows.Forms.Padding(2);
             this.rbAl.Name = "rbAl";
             this.rbAl.Size = new System.Drawing.Size(34, 17);
@@ -196,7 +199,7 @@
             // 
             this.rbBob.AutoSize = true;
             this.rbBob.BackColor = System.Drawing.Color.Pink;
-            this.rbBob.Location = new System.Drawing.Point(11, 62);
+            this.rbBob.Location = new System.Drawing.Point(17, 42);
             this.rbBob.Margin = new System.Windows.Forms.Padding(2);
             this.rbBob.Name = "rbBob";
             this.rbBob.Size = new System.Drawing.Size(44, 17);
@@ -210,7 +213,7 @@
             // 
             this.rbJoe.AutoSize = true;
             this.rbJoe.BackColor = System.Drawing.Color.Pink;
-            this.rbJoe.Location = new System.Drawing.Point(11, 40);
+            this.rbJoe.Location = new System.Drawing.Point(17, 23);
             this.rbJoe.Margin = new System.Windows.Forms.Padding(2);
             this.rbJoe.Name = "rbJoe";
             this.rbJoe.Size = new System.Drawing.Size(42, 17);
@@ -229,7 +232,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(426, 293);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(160, 105);
+            this.panel2.Size = new System.Drawing.Size(160, 121);
             this.panel2.TabIndex = 6;
             // 
             // lblAl
@@ -305,11 +308,14 @@
             // 
             // pbHorse1
             // 
-            this.pbHorse1.BackgroundImage = global::HorseBetRace.MainResource.Horse1;
-            this.pbHorse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbHorse1.BackColor = System.Drawing.Color.Transparent;
+            this.pbHorse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbHorse1.Image = global::HorseBetRace.MainResource.Horse1;
+            this.pbHorse1.InitialImage = null;
             this.pbHorse1.Location = new System.Drawing.Point(12, 12);
             this.pbHorse1.Name = "pbHorse1";
             this.pbHorse1.Size = new System.Drawing.Size(79, 41);
+            this.pbHorse1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbHorse1.TabIndex = 2;
             this.pbHorse1.TabStop = false;
             // 
@@ -323,11 +329,44 @@
             this.pbRaceTrack.TabIndex = 1;
             this.pbRaceTrack.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(12, 98);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 38);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(12, 161);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 38);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Race";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnRace);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Location = new System.Drawing.Point(603, 88);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(141, 354);
+            this.panel3.TabIndex = 24;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 454);
+            this.ClientSize = new System.Drawing.Size(888, 454);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pbHorse4);
             this.Controls.Add(this.pbHorse3);
@@ -337,6 +376,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHorseNumber)).EndInit();
@@ -348,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHorse2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHorse1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRaceTrack)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -359,7 +400,7 @@
         private System.Windows.Forms.RadioButton rbBob;
         private System.Windows.Forms.RadioButton rbJoe;
         private System.Windows.Forms.Label lblMaxBet;
-        private System.Windows.Forms.Label lblMinimumBet;
+        private System.Windows.Forms.Label lblPunter;
         private System.Windows.Forms.PictureBox pbRaceTrack;
         private System.Windows.Forms.PictureBox pbHorse1;
         private System.Windows.Forms.PictureBox pbHorse2;
@@ -377,6 +418,9 @@
         private System.Windows.Forms.Label lblBob;
         private System.Windows.Forms.Button btnRace;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

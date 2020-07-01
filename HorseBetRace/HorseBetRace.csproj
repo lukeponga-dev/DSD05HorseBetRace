@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\AllPunters\Bet.cs" />
+    <Compile Include="Data\AllPunters\Al.cs" />
+    <Compile Include="Data\Bet.cs" />
+    <Compile Include="Data\AllPunters\Bob.cs" />
     <Compile Include="Data\AllPunters\Factory.cs" />
+    <Compile Include="Data\AllPunters\Joe.cs" />
     <Compile Include="Data\AllPunters\Punter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -79,6 +82,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

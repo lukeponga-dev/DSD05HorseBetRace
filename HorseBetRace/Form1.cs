@@ -8,12 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HorseBetRace.Data.AllPunters;
-
 namespace HorseBetRace
 {
     public partial class Form1 : Form
     {
-
         Punter[] MyPunters = new Punter[3];
         Horse[] HorsesArray = new Horse[4];
 
@@ -25,11 +23,19 @@ namespace HorseBetRace
             Punters();
         }
 
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblMaxBet.Visible = true;
+        }
+
         public void LabelsClear()
         {
+
             lblJoe.Text = "";
             lblBob.Text = "";
             lblAl.Text = "";
+            lblMaxBet.Text = "";
         }
 
         public void Punters()
@@ -42,12 +48,15 @@ namespace HorseBetRace
 
             //set the text boxs to the classes and update
             MyPunters[0].MyLabel = lblJoe;
+            lblJoe.Text = MyPunters[0].PunterName + " hasn't placed a bet";
             MyPunters[0].MyRadioButton = rbJoe;
             MyPunters[0].MyRadioButton.Text = MyPunters[0].PunterName + " has $" + MyPunters[0].Cash;
             MyPunters[1].MyLabel = lblBob;
+            lblBob.Text = MyPunters[1].PunterName + " hasn't placed a bet";
             MyPunters[1].MyRadioButton = rbBob;
             MyPunters[1].MyRadioButton.Text = MyPunters[1].PunterName + " has $" + MyPunters[1].Cash;
             MyPunters[2].MyLabel = lblAl;
+            lblAl.Text = MyPunters[2].PunterName + " hasn't placed a bet";
             MyPunters[2].MyRadioButton = rbAl;
             MyPunters[2].MyRadioButton.Text = MyPunters[2].PunterName + " has $" + MyPunters[2].Cash;
         }
@@ -67,19 +76,19 @@ namespace HorseBetRace
         {
             if (MyPunters[0].Cash <= 0) // Joe
             {
-                lblJoe.Text = "Joe is now broke and cant continue betting";
+                lblJoe.Text = "BUSTED";
                 rbJoe.Enabled = false;
             }
 
             if (MyPunters[1].Cash <= 0) // Bob
             {
-                lblBob.Text = "Bob is now broke and cant continue betting";
+                lblBob.Text = "BUSTED";
                 rbBob.Enabled = false;
             }
 
             if (MyPunters[2].Cash <= 0) // Al
             {
-                lblAl.Text = "Al is now broke and cant continue betting";
+                lblAl.Text = "BUSTED";
                 rbAl.Enabled = false;
             }
         }
@@ -155,18 +164,17 @@ namespace HorseBetRace
                 punter = 2;
             }
 
-            MyPunters[punter]
-                .PlaceBet((int) nudCash.Value,
-                    (int) nudHorseNumber.Value -
-                    1); // Updates the bet amount and horse number using the Placebet in punter class
+            MyPunters[punter].PlaceBet((int)nudCash.Value,(int)nudHorseNumber.Value - 1); // Updates the bet amount and horse number using the Placebet in punter class
 
         }
 
         private void rbJoe_CheckedChanged(object sender, EventArgs e)
         {
+
             //Show that Joe is betting in the bet label
             lblBettor.Text = MyPunters[0].PunterName;
             //Sets the maxinum bet
+            lblMaxBet.Text = MyPunters[0].PunterName + @" Max Bet $" + MyPunters[0].Cash;
             nudCash.Maximum = MyPunters[0].Cash;
         }
 
@@ -175,6 +183,7 @@ namespace HorseBetRace
             //Show that Bob is betting in the bet label 
             lblBettor.Text = MyPunters[1].PunterName;
             //Sets the maxinum bet
+            lblMaxBet.Text = MyPunters[1].PunterName + @" Max Bet $" + MyPunters[1].Cash;
             nudCash.Maximum = MyPunters[1].Cash;
         }
 
@@ -183,6 +192,7 @@ namespace HorseBetRace
             //Show that Al is betting in the bet label 
             lblBettor.Text = MyPunters[2].PunterName;
             //Sets the maxinum bet
+            lblMaxBet.Text = MyPunters[2].PunterName + @" Max Bet $" + MyPunters[2].Cash;
             nudCash.Maximum = MyPunters[2].Cash;
         }
 
@@ -201,6 +211,8 @@ namespace HorseBetRace
             {
                 t.Mypb.Left = t.StartingPosition;
             }
+
+            btnRace.Enabled = true;
         }
 
         private void btnRace_Click(object sender, EventArgs e)
@@ -278,7 +290,6 @@ namespace HorseBetRace
                 MessageBox.Show(@"A bet was not placed");
             }
         }
-
 
     }
 }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace HorseBetRace.Data.AllPunters
 {
-   public abstract class Punter
+    public abstract class Punter
     {
         public string PunterName { get; set; } // The punters name
         public Bet MyBet { get; set; } // An instance of Bet() that has punters bet
@@ -20,6 +15,7 @@ namespace HorseBetRace.Data.AllPunters
         {
             MyLabel.Text = MyBet.GetDescription();
         }
+
         public bool PlaceBet(int betAmount, int horseToWin) // Place a new bet and store it in my bet field
         {
             if (Cash >= betAmount)
@@ -41,33 +37,5 @@ namespace HorseBetRace.Data.AllPunters
             }
 
         }
-   }
-
-   public class Joe : Punter // Inherit from the Punter class
-   {
-       public Joe() // Sets up the punter Joe
-       {
-           PunterName = "Joe";
-           Cash = 50;
-       }
-   }
-
-   public class Bob : Punter // Inherit from the Punter class
-   {
-       public Bob() // Sets up the punter Bob
-       {
-           PunterName = "Bob";
-           Cash = 50;
-       }
-   }
-
-
-   public class Al : Punter // Inherit from the Punter class
-   {
-       public Al() // Sets up the punter Al
-       {
-           PunterName = "Al";
-           Cash = 50;
-       }
-   }
+    }
 }

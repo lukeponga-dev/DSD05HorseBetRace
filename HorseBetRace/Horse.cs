@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HorseBetRace
 {
-  public class Horse
+    public class Horse
     {
         // Sets the Horse name
         public string HorseName { get; set; }
