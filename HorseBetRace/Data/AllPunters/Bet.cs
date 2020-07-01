@@ -17,7 +17,7 @@ namespace HorseBetRace.Data.AllPunters
             string description = Bettor.PunterName + " bet $" + Amount + " on Horse " + (Horse + 1);
             return description;
             //If amount is 0 no bet is place
-
+            
         }
 
         public int PayOut(int winner)//The winner is winner of race if the horse won return the amount bet

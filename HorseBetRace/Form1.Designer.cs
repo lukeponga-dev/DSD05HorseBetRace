@@ -41,26 +41,26 @@
             this.rbAl = new System.Windows.Forms.RadioButton();
             this.rbBob = new System.Windows.Forms.RadioButton();
             this.rbJoe = new System.Windows.Forms.RadioButton();
-            this.pbRaceTrack = new System.Windows.Forms.PictureBox();
-            this.pbHorse1 = new System.Windows.Forms.PictureBox();
-            this.pbHorse2 = new System.Windows.Forms.PictureBox();
-            this.pbHorse3 = new System.Windows.Forms.PictureBox();
-            this.pbHorse4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAl = new System.Windows.Forms.Label();
             this.lblBob = new System.Windows.Forms.Label();
             this.lblJoe = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pbHorse4 = new System.Windows.Forms.PictureBox();
+            this.pbHorse3 = new System.Windows.Forms.PictureBox();
+            this.pbHorse2 = new System.Windows.Forms.PictureBox();
+            this.pbHorse1 = new System.Windows.Forms.PictureBox();
+            this.pbRaceTrack = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHorseNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCash)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRaceTrack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse4)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRaceTrack)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,16 +77,16 @@
             this.panel1.Controls.Add(this.rbAl);
             this.panel1.Controls.Add(this.rbBob);
             this.panel1.Controls.Add(this.rbJoe);
-            this.panel1.Location = new System.Drawing.Point(12, 28);
+            this.panel1.Location = new System.Drawing.Point(-5, 293);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 272);
+            this.panel1.Size = new System.Drawing.Size(425, 157);
             this.panel1.TabIndex = 0;
             // 
             // btnRace
             // 
             this.btnRace.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnRace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRace.Location = new System.Drawing.Point(11, 218);
+            this.btnRace.Location = new System.Drawing.Point(301, 109);
             this.btnRace.Name = "btnRace";
             this.btnRace.Size = new System.Drawing.Size(112, 38);
             this.btnRace.TabIndex = 21;
@@ -98,7 +98,7 @@
             // 
             this.btnBet.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnBet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBet.Location = new System.Drawing.Point(11, 174);
+            this.btnBet.Location = new System.Drawing.Point(301, 65);
             this.btnBet.Name = "btnBet";
             this.btnBet.Size = new System.Drawing.Size(112, 38);
             this.btnBet.TabIndex = 20;
@@ -108,9 +108,19 @@
             // 
             // nudHorseNumber
             // 
-            this.nudHorseNumber.Location = new System.Drawing.Point(97, 148);
+            this.nudHorseNumber.Location = new System.Drawing.Point(380, 37);
+            this.nudHorseNumber.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.nudHorseNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudHorseNumber.Name = "nudHorseNumber";
-            this.nudHorseNumber.Size = new System.Drawing.Size(51, 20);
+            this.nudHorseNumber.Size = new System.Drawing.Size(37, 20);
             this.nudHorseNumber.TabIndex = 19;
             this.nudHorseNumber.Value = new decimal(new int[] {
             1,
@@ -120,15 +130,20 @@
             // 
             // nudCash
             // 
-            this.nudCash.Location = new System.Drawing.Point(96, 123);
+            this.nudCash.Location = new System.Drawing.Point(380, 14);
+            this.nudCash.Maximum = new decimal(new int[] {
+            45,
+            0,
+            0,
+            0});
             this.nudCash.Name = "nudCash";
-            this.nudCash.Size = new System.Drawing.Size(54, 20);
+            this.nudCash.Size = new System.Drawing.Size(37, 20);
             this.nudCash.TabIndex = 18;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 148);
+            this.label1.Location = new System.Drawing.Point(298, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 17;
@@ -137,7 +152,7 @@
             // lblBettor
             // 
             this.lblBettor.AutoSize = true;
-            this.lblBettor.Location = new System.Drawing.Point(46, 126);
+            this.lblBettor.Location = new System.Drawing.Point(337, 16);
             this.lblBettor.Name = "lblBettor";
             this.lblBettor.Size = new System.Drawing.Size(44, 13);
             this.lblBettor.TabIndex = 16;
@@ -146,7 +161,8 @@
             // lblMaxBet
             // 
             this.lblMaxBet.AutoSize = true;
-            this.lblMaxBet.Location = new System.Drawing.Point(9, 104);
+            this.lblMaxBet.BackColor = System.Drawing.Color.Pink;
+            this.lblMaxBet.Location = new System.Drawing.Point(107, 14);
             this.lblMaxBet.Name = "lblMaxBet";
             this.lblMaxBet.Size = new System.Drawing.Size(46, 13);
             this.lblMaxBet.TabIndex = 15;
@@ -204,57 +220,6 @@
             this.rbJoe.UseVisualStyleBackColor = false;
             this.rbJoe.CheckedChanged += new System.EventHandler(this.rbJoe_CheckedChanged);
             // 
-            // pbRaceTrack
-            // 
-            this.pbRaceTrack.BackgroundImage = global::HorseBetRace.MainResource.racetrack;
-            this.pbRaceTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbRaceTrack.Location = new System.Drawing.Point(193, 12);
-            this.pbRaceTrack.Name = "pbRaceTrack";
-            this.pbRaceTrack.Size = new System.Drawing.Size(603, 278);
-            this.pbRaceTrack.TabIndex = 1;
-            this.pbRaceTrack.TabStop = false;
-            // 
-            // pbHorse1
-            // 
-            this.pbHorse1.BackgroundImage = global::HorseBetRace.MainResource.Horse1;
-            this.pbHorse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse1.Location = new System.Drawing.Point(210, 28);
-            this.pbHorse1.Name = "pbHorse1";
-            this.pbHorse1.Size = new System.Drawing.Size(79, 41);
-            this.pbHorse1.TabIndex = 2;
-            this.pbHorse1.TabStop = false;
-            // 
-            // pbHorse2
-            // 
-            this.pbHorse2.BackgroundImage = global::HorseBetRace.MainResource.Horse2;
-            this.pbHorse2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse2.Location = new System.Drawing.Point(210, 88);
-            this.pbHorse2.Name = "pbHorse2";
-            this.pbHorse2.Size = new System.Drawing.Size(79, 41);
-            this.pbHorse2.TabIndex = 3;
-            this.pbHorse2.TabStop = false;
-            // 
-            // pbHorse3
-            // 
-            this.pbHorse3.BackgroundImage = global::HorseBetRace.MainResource.Horse3;
-            this.pbHorse3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse3.Location = new System.Drawing.Point(210, 150);
-            this.pbHorse3.Name = "pbHorse3";
-            this.pbHorse3.Size = new System.Drawing.Size(79, 41);
-            this.pbHorse3.TabIndex = 4;
-            this.pbHorse3.TabStop = false;
-            // 
-            // pbHorse4
-            // 
-            this.pbHorse4.BackColor = System.Drawing.Color.Transparent;
-            this.pbHorse4.BackgroundImage = global::HorseBetRace.MainResource.Horse4;
-            this.pbHorse4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse4.Location = new System.Drawing.Point(210, 213);
-            this.pbHorse4.Name = "pbHorse4";
-            this.pbHorse4.Size = new System.Drawing.Size(79, 38);
-            this.pbHorse4.TabIndex = 5;
-            this.pbHorse4.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightPink;
@@ -262,7 +227,7 @@
             this.panel2.Controls.Add(this.lblBob);
             this.panel2.Controls.Add(this.lblJoe);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 300);
+            this.panel2.Location = new System.Drawing.Point(426, 293);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(160, 105);
             this.panel2.TabIndex = 6;
@@ -307,11 +272,62 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pbHorse4
+            // 
+            this.pbHorse4.BackColor = System.Drawing.Color.Transparent;
+            this.pbHorse4.BackgroundImage = global::HorseBetRace.MainResource.Horse4;
+            this.pbHorse4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbHorse4.Location = new System.Drawing.Point(12, 208);
+            this.pbHorse4.Name = "pbHorse4";
+            this.pbHorse4.Size = new System.Drawing.Size(79, 38);
+            this.pbHorse4.TabIndex = 5;
+            this.pbHorse4.TabStop = false;
+            // 
+            // pbHorse3
+            // 
+            this.pbHorse3.BackgroundImage = global::HorseBetRace.MainResource.Horse3;
+            this.pbHorse3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbHorse3.Location = new System.Drawing.Point(12, 144);
+            this.pbHorse3.Name = "pbHorse3";
+            this.pbHorse3.Size = new System.Drawing.Size(79, 41);
+            this.pbHorse3.TabIndex = 4;
+            this.pbHorse3.TabStop = false;
+            // 
+            // pbHorse2
+            // 
+            this.pbHorse2.BackgroundImage = global::HorseBetRace.MainResource.Horse2;
+            this.pbHorse2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbHorse2.Location = new System.Drawing.Point(12, 78);
+            this.pbHorse2.Name = "pbHorse2";
+            this.pbHorse2.Size = new System.Drawing.Size(79, 41);
+            this.pbHorse2.TabIndex = 3;
+            this.pbHorse2.TabStop = false;
+            // 
+            // pbHorse1
+            // 
+            this.pbHorse1.BackgroundImage = global::HorseBetRace.MainResource.Horse1;
+            this.pbHorse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbHorse1.Location = new System.Drawing.Point(12, 12);
+            this.pbHorse1.Name = "pbHorse1";
+            this.pbHorse1.Size = new System.Drawing.Size(79, 41);
+            this.pbHorse1.TabIndex = 2;
+            this.pbHorse1.TabStop = false;
+            // 
+            // pbRaceTrack
+            // 
+            this.pbRaceTrack.BackgroundImage = global::HorseBetRace.MainResource.racetrack;
+            this.pbRaceTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbRaceTrack.Location = new System.Drawing.Point(-5, -1);
+            this.pbRaceTrack.Name = "pbRaceTrack";
+            this.pbRaceTrack.Size = new System.Drawing.Size(602, 288);
+            this.pbRaceTrack.TabIndex = 1;
+            this.pbRaceTrack.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 444);
+            this.ClientSize = new System.Drawing.Size(1142, 454);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pbHorse4);
             this.Controls.Add(this.pbHorse3);
@@ -325,13 +341,13 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHorseNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCash)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRaceTrack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHorse4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHorse1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRaceTrack)).EndInit();
             this.ResumeLayout(false);
 
         }
