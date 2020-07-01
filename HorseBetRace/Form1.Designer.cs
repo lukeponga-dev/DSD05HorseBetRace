@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRace = new System.Windows.Forms.Button();
             this.btnBet = new System.Windows.Forms.Button();
             this.nudHorseNumber = new System.Windows.Forms.NumericUpDown();
             this.nudCash = new System.Windows.Forms.NumericUpDown();
@@ -41,6 +40,7 @@
             this.rbAl = new System.Windows.Forms.RadioButton();
             this.rbBob = new System.Windows.Forms.RadioButton();
             this.rbJoe = new System.Windows.Forms.RadioButton();
+            this.btnRace = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAl = new System.Windows.Forms.Label();
             this.lblBob = new System.Windows.Forms.Label();
@@ -85,18 +85,6 @@
             this.panel1.Size = new System.Drawing.Size(379, 110);
             this.panel1.TabIndex = 0;
             // 
-            // btnRace
-            // 
-            this.btnRace.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRace.Location = new System.Drawing.Point(12, 39);
-            this.btnRace.Name = "btnRace";
-            this.btnRace.Size = new System.Drawing.Size(112, 38);
-            this.btnRace.TabIndex = 21;
-            this.btnRace.Text = "Race";
-            this.btnRace.UseVisualStyleBackColor = false;
-            this.btnRace.Click += new System.EventHandler(this.btnRace_Click);
-            // 
             // btnBet
             // 
             this.btnBet.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -139,9 +127,19 @@
             0,
             0});
             this.nudCash.Location = new System.Drawing.Point(337, 3);
+            this.nudCash.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.nudCash.Name = "nudCash";
             this.nudCash.Size = new System.Drawing.Size(37, 20);
             this.nudCash.TabIndex = 18;
+            this.nudCash.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -222,6 +220,18 @@
             this.rbJoe.Text = "Joe";
             this.rbJoe.UseVisualStyleBackColor = false;
             this.rbJoe.CheckedChanged += new System.EventHandler(this.rbJoe_CheckedChanged);
+            // 
+            // btnRace
+            // 
+            this.btnRace.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRace.Location = new System.Drawing.Point(12, 39);
+            this.btnRace.Name = "btnRace";
+            this.btnRace.Size = new System.Drawing.Size(112, 38);
+            this.btnRace.TabIndex = 21;
+            this.btnRace.Text = "Race";
+            this.btnRace.UseVisualStyleBackColor = false;
+            this.btnRace.Click += new System.EventHandler(this.btnRace_Click);
             // 
             // panel2
             // 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using HorseBetRace.Data.AllPunters;
 
 namespace HorseBetRace
 {
@@ -13,10 +14,11 @@ namespace HorseBetRace
         public PictureBox Mypb { get; set; } = null; // The picturebox object
         public Random Rand { get; set; } // An instance of random for the random generator
 
+
         public bool Run(PictureBox raceTrack)
         {
             // Move forward 1, 2, 3 or 4 spaces at random
-            Mypb.Left += Rand.Next(0, 6);
+            Mypb.Left += Rand.Next(1,10);
 
             // Return true if race is won
             if (Mypb.Right > raceTrack.Right)
