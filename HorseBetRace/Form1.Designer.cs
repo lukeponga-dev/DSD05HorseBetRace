@@ -52,7 +52,7 @@
             this.pbHorse2 = new System.Windows.Forms.PictureBox();
             this.pbHorse1 = new System.Windows.Forms.PictureBox();
             this.pbRaceTrack = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -69,7 +69,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Pink;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.btnBet);
             this.panel1.Controls.Add(this.nudHorseNumber);
             this.panel1.Controls.Add(this.nudCash);
@@ -80,18 +80,18 @@
             this.panel1.Controls.Add(this.rbAl);
             this.panel1.Controls.Add(this.rbBob);
             this.panel1.Controls.Add(this.rbJoe);
-            this.panel1.Location = new System.Drawing.Point(-5, 293);
+            this.panel1.Location = new System.Drawing.Point(12, 358);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 96);
+            this.panel1.Size = new System.Drawing.Size(328, 96);
             this.panel1.TabIndex = 0;
             // 
             // btnBet
             // 
             this.btnBet.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnBet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBet.Location = new System.Drawing.Point(262, 51);
+            this.btnBet.Location = new System.Drawing.Point(229, 48);
             this.btnBet.Name = "btnBet";
-            this.btnBet.Size = new System.Drawing.Size(112, 38);
+            this.btnBet.Size = new System.Drawing.Size(90, 40);
             this.btnBet.TabIndex = 20;
             this.btnBet.Text = "Place Bet";
             this.btnBet.UseVisualStyleBackColor = false;
@@ -99,7 +99,8 @@
             // 
             // nudHorseNumber
             // 
-            this.nudHorseNumber.Location = new System.Drawing.Point(337, 25);
+            this.nudHorseNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nudHorseNumber.Location = new System.Drawing.Point(186, 70);
             this.nudHorseNumber.Maximum = new decimal(new int[] {
             4,
             0,
@@ -121,12 +122,13 @@
             // 
             // nudCash
             // 
+            this.nudCash.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.nudCash.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.nudCash.Location = new System.Drawing.Point(337, 3);
+            this.nudCash.Location = new System.Drawing.Point(186, 47);
             this.nudCash.Minimum = new decimal(new int[] {
             5,
             0,
@@ -144,7 +146,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 27);
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(67, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 17;
@@ -153,7 +156,8 @@
             // lblBettor
             // 
             this.lblBettor.AutoSize = true;
-            this.lblBettor.Location = new System.Drawing.Point(296, 5);
+            this.lblBettor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblBettor.Location = new System.Drawing.Point(145, 49);
             this.lblBettor.Name = "lblBettor";
             this.lblBettor.Size = new System.Drawing.Size(44, 13);
             this.lblBettor.TabIndex = 16;
@@ -162,7 +166,7 @@
             // lblMaxBet
             // 
             this.lblMaxBet.AutoSize = true;
-            this.lblMaxBet.BackColor = System.Drawing.Color.Pink;
+            this.lblMaxBet.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblMaxBet.Location = new System.Drawing.Point(110, 8);
             this.lblMaxBet.Name = "lblMaxBet";
             this.lblMaxBet.Size = new System.Drawing.Size(46, 13);
@@ -173,6 +177,7 @@
             // lblPunter
             // 
             this.lblPunter.AutoSize = true;
+            this.lblPunter.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblPunter.Location = new System.Drawing.Point(14, 8);
             this.lblPunter.Name = "lblPunter";
             this.lblPunter.Size = new System.Drawing.Size(35, 13);
@@ -182,7 +187,7 @@
             // rbAl
             // 
             this.rbAl.AutoSize = true;
-            this.rbAl.BackColor = System.Drawing.Color.Pink;
+            this.rbAl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rbAl.Location = new System.Drawing.Point(17, 63);
             this.rbAl.Margin = new System.Windows.Forms.Padding(2);
             this.rbAl.Name = "rbAl";
@@ -196,7 +201,7 @@
             // rbBob
             // 
             this.rbBob.AutoSize = true;
-            this.rbBob.BackColor = System.Drawing.Color.Pink;
+            this.rbBob.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rbBob.Location = new System.Drawing.Point(17, 42);
             this.rbBob.Margin = new System.Windows.Forms.Padding(2);
             this.rbBob.Name = "rbBob";
@@ -210,7 +215,7 @@
             // rbJoe
             // 
             this.rbJoe.AutoSize = true;
-            this.rbJoe.BackColor = System.Drawing.Color.Pink;
+            this.rbJoe.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rbJoe.Location = new System.Drawing.Point(17, 23);
             this.rbJoe.Margin = new System.Windows.Forms.Padding(2);
             this.rbJoe.Name = "rbJoe";
@@ -225,7 +230,7 @@
             // 
             this.btnRace.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnRace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRace.Location = new System.Drawing.Point(12, 39);
+            this.btnRace.Location = new System.Drawing.Point(14, 12);
             this.btnRace.Name = "btnRace";
             this.btnRace.Size = new System.Drawing.Size(112, 38);
             this.btnRace.TabIndex = 21;
@@ -235,12 +240,12 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightPink;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.lblAl);
             this.panel2.Controls.Add(this.lblBob);
             this.panel2.Controls.Add(this.lblJoe);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(380, 293);
+            this.panel2.Location = new System.Drawing.Point(346, 358);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(160, 96);
             this.panel2.TabIndex = 6;
@@ -290,7 +295,7 @@
             this.pbHorse4.BackColor = System.Drawing.Color.Transparent;
             this.pbHorse4.BackgroundImage = global::HorseBetRace.MainResource.Horse4;
             this.pbHorse4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse4.Location = new System.Drawing.Point(12, 208);
+            this.pbHorse4.Location = new System.Drawing.Point(12, 255);
             this.pbHorse4.Name = "pbHorse4";
             this.pbHorse4.Size = new System.Drawing.Size(79, 38);
             this.pbHorse4.TabIndex = 5;
@@ -300,7 +305,7 @@
             // 
             this.pbHorse3.BackgroundImage = global::HorseBetRace.MainResource.Horse3;
             this.pbHorse3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse3.Location = new System.Drawing.Point(12, 144);
+            this.pbHorse3.Location = new System.Drawing.Point(12, 177);
             this.pbHorse3.Name = "pbHorse3";
             this.pbHorse3.Size = new System.Drawing.Size(79, 41);
             this.pbHorse3.TabIndex = 4;
@@ -310,7 +315,7 @@
             // 
             this.pbHorse2.BackgroundImage = global::HorseBetRace.MainResource.Horse2;
             this.pbHorse2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse2.Location = new System.Drawing.Point(12, 78);
+            this.pbHorse2.Location = new System.Drawing.Point(12, 101);
             this.pbHorse2.Name = "pbHorse2";
             this.pbHorse2.Size = new System.Drawing.Size(79, 41);
             this.pbHorse2.TabIndex = 3;
@@ -322,7 +327,7 @@
             this.pbHorse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbHorse1.Image = global::HorseBetRace.MainResource.Horse1;
             this.pbHorse1.InitialImage = null;
-            this.pbHorse1.Location = new System.Drawing.Point(12, 12);
+            this.pbHorse1.Location = new System.Drawing.Point(12, 21);
             this.pbHorse1.Name = "pbHorse1";
             this.pbHorse1.Size = new System.Drawing.Size(79, 41);
             this.pbHorse1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,26 +340,27 @@
             this.pbRaceTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbRaceTrack.Location = new System.Drawing.Point(-5, -1);
             this.pbRaceTrack.Name = "pbRaceTrack";
-            this.pbRaceTrack.Size = new System.Drawing.Size(602, 288);
+            this.pbRaceTrack.Size = new System.Drawing.Size(657, 353);
             this.pbRaceTrack.TabIndex = 1;
             this.pbRaceTrack.TabStop = false;
             // 
-            // button1
+            // btnRestart
             // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(158, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 38);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRestart.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRestart.Location = new System.Drawing.Point(132, 12);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(112, 38);
+            this.btnRestart.TabIndex = 22;
+            this.btnRestart.Text = "Restart";
+            this.btnRestart.UseVisualStyleBackColor = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // btnQuit
             // 
             this.btnQuit.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnQuit.Location = new System.Drawing.Point(83, 95);
+            this.btnQuit.Location = new System.Drawing.Point(250, 12);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(112, 38);
             this.btnQuit.TabIndex = 23;
@@ -364,19 +370,20 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.btnRace);
             this.panel3.Controls.Add(this.btnQuit);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(603, 88);
+            this.panel3.Controls.Add(this.btnRestart);
+            this.panel3.Location = new System.Drawing.Point(12, 460);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(273, 223);
+            this.panel3.Size = new System.Drawing.Size(376, 66);
             this.panel3.TabIndex = 24;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 454);
+            this.ClientSize = new System.Drawing.Size(630, 531);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pbHorse4);
@@ -429,7 +436,7 @@
         private System.Windows.Forms.Label lblBob;
         private System.Windows.Forms.Button btnRace;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Panel panel3;
     }

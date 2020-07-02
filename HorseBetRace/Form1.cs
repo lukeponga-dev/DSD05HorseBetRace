@@ -208,7 +208,25 @@ namespace HorseBetRace
                     1); // Updates the bet amount and horse number using the Placebet in punter class
             btnRace.Enabled = true;
         }
+        public void ResetRace() //Reset horses back to start
+        {
+            //resets the text box
+            MyPunters[0].MyLabel.ResetText();
+            MyPunters[1].MyLabel.ResetText();
+            MyPunters[2].MyLabel.ResetText();
+            //resets the bet amounts to zero
+            MyPunters[0].MyBet.Amount = 0;
+            MyPunters[1].MyBet.Amount = 0;
+            MyPunters[2].MyBet.Amount = 0;
 
+            foreach (Horse t in HorsesArray)
+            {
+                t.Mypb.Left = t.StartingPosition;
+            }
+
+            btnBet.Enabled = true;
+            btnRace.Enabled = false;
+        }
         #region StartRace
 
         private void btnRace_Click(object sender, EventArgs e)
@@ -271,15 +289,13 @@ namespace HorseBetRace
                         winner = i;
                         timer1.Enabled = false;
                         MessageBox.Show(@"Horse #" + (winner + 1) + " Wins");
-
+                        
                         for (int j = 0; j < MyPunters.Length; j++)
-                        {
-                            if (MyPunters[j].MyBet.PayOut(winner) != 0) //payout is not 0
-                                MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner);
-                                MyPunters[j].MyRadioButton.Text =
-                                    MyPunters[j].PunterName + " has $" + MyPunters[j].Cash;//Updates the radio button with new cash amount
-                            
-                        }
+                         {
+                           if (MyPunters[j].MyBet.PayOut(winner: winner) != 0) //payout is not 0
+                               MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner); 
+                           MyPunters[j].MyRadioButton.Text = MyPunters[j].PunterName + " has $" + MyPunters[j].Cash;//Updates the radio button with new cash amount
+                         }
 
                         ResetRace();
                         ResetBetAmount();
@@ -299,25 +315,7 @@ namespace HorseBetRace
 
         #endregion
 
-        public void ResetRace() //Reset horses back to start
-        {
-            //resets the text box
-            MyPunters[0].MyLabel.ResetText();
-            MyPunters[1].MyLabel.ResetText();
-            MyPunters[2].MyLabel.ResetText();
-            //resets the vet amounts to zero
-            MyPunters[0].MyBet.Amount = 0;
-            MyPunters[1].MyBet.Amount = 0;
-            MyPunters[2].MyBet.Amount = 0;
-
-            foreach (Horse t in HorsesArray)
-            {
-                t.Mypb.Left = t.StartingPosition;
-            }
-
-            btnBet.Enabled = true;
-            btnRace.Enabled = false;
-        }
+   
 
         public void GameOverCheck() // Checks to see if the game is over
         {
@@ -333,6 +331,16 @@ namespace HorseBetRace
         {
             // Closes the form 
             this.Close();
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            ResetRace();
+
+            btnRestart.Enabled = false;
+            btnBet.Enabled = true;
+
         }
     }
 }
