@@ -227,6 +227,7 @@ namespace HorseBetRace
             btnBet.Enabled = true;
             btnRace.Enabled = false;
         }
+       
         #region StartRace
 
         private void btnRace_Click(object sender, EventArgs e)
@@ -291,11 +292,11 @@ namespace HorseBetRace
                         MessageBox.Show(@"Horse #" + (winner + 1) + " Wins");
                         
                         for (int j = 0; j < MyPunters.Length; j++)
-                         {
-                           if (MyPunters[j].MyBet.PayOut(winner: winner) != 0) //payout is not 0
-                               MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner); 
-                           MyPunters[j].MyRadioButton.Text = MyPunters[j].PunterName + " has $" + MyPunters[j].Cash;//Updates the radio button with new cash amount
-                         }
+                        {
+                            if (MyPunters[j].MyBet.PayOut(winner: winner) != 0) //payout is not 0
+                                MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner); 
+                            MyPunters[j].MyRadioButton.Text = MyPunters[j].PunterName + " has $" + MyPunters[j].Cash;//Updates the radio button with new cash amount
+                        }
 
                         ResetRace();
                         ResetBetAmount();
@@ -321,7 +322,7 @@ namespace HorseBetRace
         {
             if (MyPunters[0].Cash <= 0 && MyPunters[1].Cash <= 0 && MyPunters[2].Cash <= 0)
             {
-                MessageBox.Show(@"All of your bettors are broke! Try Again..");
+                MessageBox.Show(@"Game Over! Your bettors are broke!");
                 LabelsClear();
                 ResetRace();
                 this.Close();}

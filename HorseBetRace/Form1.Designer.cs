@@ -82,7 +82,7 @@
             this.panel1.Controls.Add(this.rbJoe);
             this.panel1.Location = new System.Drawing.Point(12, 358);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 96);
+            this.panel1.Size = new System.Drawing.Size(328, 108);
             this.panel1.TabIndex = 0;
             // 
             // btnBet
@@ -100,7 +100,7 @@
             // nudHorseNumber
             // 
             this.nudHorseNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.nudHorseNumber.Location = new System.Drawing.Point(186, 70);
+            this.nudHorseNumber.Location = new System.Drawing.Point(186, 81);
             this.nudHorseNumber.Maximum = new decimal(new int[] {
             4,
             0,
@@ -147,7 +147,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(67, 71);
+            this.label1.Location = new System.Drawing.Point(67, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 17;
@@ -374,7 +374,7 @@
             this.panel3.Controls.Add(this.btnRace);
             this.panel3.Controls.Add(this.btnQuit);
             this.panel3.Controls.Add(this.btnRestart);
-            this.panel3.Location = new System.Drawing.Point(12, 460);
+            this.panel3.Location = new System.Drawing.Point(12, 472);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(376, 66);
             this.panel3.TabIndex = 24;
@@ -383,7 +383,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 531);
+            this.ClientSize = new System.Drawing.Size(630, 550);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pbHorse4);

@@ -5,15 +5,14 @@ using HorseBetRace.Data.AllPunters;
 namespace HorseBetRace
 {
     public class Horse
-    {
-        // Sets the Horse name
+    { 
         public string HorseName { get; set; }
         // Where my picture box starts
         public int StartingPosition { get; set; }
-        public int RaceTrackLength { get; set; } // How long my racetrack is
-        public PictureBox Mypb { get; set; } = null; // The picturebox object
+        public int RaceTrackLength { get; set; }
+        public PictureBox Mypb { get; set; } = null;
+       
         public Random Rand { get; set; } // An instance of random for the random generator
-
 
         public bool Run(PictureBox raceTrack)
         {
