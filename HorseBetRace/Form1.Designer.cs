@@ -172,7 +172,6 @@
             this.lblMaxBet.Size = new System.Drawing.Size(46, 13);
             this.lblMaxBet.TabIndex = 15;
             this.lblMaxBet.Text = "Max Bet";
-            this.lblMaxBet.Visible = false;
             // 
             // lblPunter
             // 

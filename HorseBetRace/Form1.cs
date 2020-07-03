@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HorseBetRace.Data.AllPunters;
+using System;
 using System.Windows.Forms;
-using HorseBetRace.Data.AllPunters;
 
 namespace HorseBetRace
 {
@@ -31,8 +23,8 @@ namespace HorseBetRace
             LabelsClear();
             Punters();
             btnBet.Enabled = true;
-            lblMaxBet.Visible = true;
             btnRace.Enabled = false;
+            btnRestart.Enabled = false;
 
         }
 
@@ -117,7 +109,6 @@ namespace HorseBetRace
         #endregion
 
         #region Radio Buttons Checked/Changed
-
         private void rbJoe_CheckedChanged(object sender, EventArgs e)
         {
             //Show that Joe is betting in the bet label
@@ -144,8 +135,30 @@ namespace HorseBetRace
             lblMaxBet.Text = MyPunters[2].PunterName + @" Max Bet $" + MyPunters[2].Cash;
             nudCash.Maximum = MyPunters[2].Cash;
         }
-
         #endregion
+
+        private void btnBet_Click(object sender, EventArgs e)
+        {
+            var punter = 0;
+            if (rbJoe.Checked)
+            {
+                punter = 0;
+            }
+            else if (rbBob.Checked)
+            {
+                punter = 1;
+            }
+            else if (rbAl.Checked)
+            {
+                punter = 2;
+            }
+
+            MyPunters[punter]
+                .PlaceBet((int)nudCash.Value,
+                    (int)nudHorseNumber.Value -
+                    1); // Updates the bet amount and horse number using the Placebet in punter class
+            btnRace.Enabled = true;
+        }
 
         public void BettorBroke() // Checks to see if any punters are broke and cant continue
         {
@@ -186,28 +199,6 @@ namespace HorseBetRace
             }
         }
 
-        private void btnBet_Click(object sender, EventArgs e)
-        {
-            var punter = 0;
-            if (rbJoe.Checked)
-            {
-                punter = 0;
-            }
-            else if (rbBob.Checked)
-            {
-                punter = 1;
-            }
-            else if (rbAl.Checked)
-            {
-                punter = 2;
-            }
-
-            MyPunters[punter]
-                .PlaceBet((int) nudCash.Value,
-                    (int) nudHorseNumber.Value -
-                    1); // Updates the bet amount and horse number using the Placebet in punter class
-            btnRace.Enabled = true;
-        }
         public void ResetRace() //Reset horses back to start
         {
             //resets the text box
@@ -218,7 +209,6 @@ namespace HorseBetRace
             MyPunters[0].MyBet.Amount = 0;
             MyPunters[1].MyBet.Amount = 0;
             MyPunters[2].MyBet.Amount = 0;
-
             foreach (Horse t in HorsesArray)
             {
                 t.Mypb.Left = t.StartingPosition;
@@ -227,9 +217,19 @@ namespace HorseBetRace
             btnBet.Enabled = true;
             btnRace.Enabled = false;
         }
-       
-        #region StartRace
 
+        public void GameOverCheck() // Checks to see if the game is over
+        {
+            if (MyPunters[0].Cash <= 0 && MyPunters[1].Cash <= 0 && MyPunters[2].Cash <= 0)
+            {
+                MessageBox.Show(@"Game Over! Your bettors are broke!");
+                LabelsClear();
+                ResetRace();
+                this.Close();
+            }
+        }
+
+        #region StartRace
         private void btnRace_Click(object sender, EventArgs e)
         {
             StartRace();
@@ -268,14 +268,13 @@ namespace HorseBetRace
                 timer1.Enabled = true;
                 btnBet.Enabled = false;
                 btnRace.Enabled = false;
+                btnRestart.Enabled = true;
 
             }
         }
-
         #endregion
 
         #region Winner
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Run the timer for the race and return the winner and bet results
@@ -290,11 +289,11 @@ namespace HorseBetRace
                         winner = i;
                         timer1.Enabled = false;
                         MessageBox.Show(@"Horse #" + (winner + 1) + " Wins");
-                        
+
                         for (int j = 0; j < MyPunters.Length; j++)
                         {
-                            if (MyPunters[j].MyBet.PayOut(winner: winner) != 0) //payout is not 0
-                                MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner); 
+                            if (MyPunters[j].MyBet.PayOut(winner: winner) != 0)//payout is not 0
+                                MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner);
                             MyPunters[j].MyRadioButton.Text = MyPunters[j].PunterName + " has $" + MyPunters[j].Cash;//Updates the radio button with new cash amount
                         }
 
@@ -313,20 +312,7 @@ namespace HorseBetRace
                 MessageBox.Show(@"A bet was not placed");
             }
         }
-
         #endregion
-
-   
-
-        public void GameOverCheck() // Checks to see if the game is over
-        {
-            if (MyPunters[0].Cash <= 0 && MyPunters[1].Cash <= 0 && MyPunters[2].Cash <= 0)
-            {
-                MessageBox.Show(@"Game Over! Your bettors are broke!");
-                LabelsClear();
-                ResetRace();
-                this.Close();}
-        }
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
@@ -338,7 +324,6 @@ namespace HorseBetRace
         {
             LoadData();
             ResetRace();
-
             btnRestart.Enabled = false;
             btnBet.Enabled = true;
 

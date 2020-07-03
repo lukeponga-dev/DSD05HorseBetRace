@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace HorseBetRace.Data.AllPunters
+﻿namespace HorseBetRace.Data.AllPunters
 {
     public static class Factory
     {
+
         // Decides which class to instantiate
         public static Punter GetAPunter(int id)
         {

@@ -1,5 +1,6 @@
-﻿using System;
+﻿using HorseBetRace.Data.AllPunters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace UnitTestProject1
 {
@@ -7,8 +8,12 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestCash()
         {
+            int id = 0;
+            int ExpectedCash = 50;
+            int ActualCash = Convert.ToInt32(Factory.GetAPunter(id).Cash);
+            Assert.AreEqual(ExpectedCash, ActualCash);
         }
     }
 }
