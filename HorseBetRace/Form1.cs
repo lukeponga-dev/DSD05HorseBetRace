@@ -15,6 +15,7 @@ namespace HorseBetRace
             LoadData();
         }
 
+        //Setting up the data for race
         #region Load Data
 
         private void LoadData()
@@ -33,7 +34,7 @@ namespace HorseBetRace
             LoadData();
         }
 
-        public void LabelsClear()
+        public void LabelsClear() // Clears the labels
         {
             lblJoe.Text = "";
             lblBob.Text = "";
@@ -323,6 +324,8 @@ namespace HorseBetRace
         private void btnRestart_Click(object sender, EventArgs e)
         {
             LoadData();
+            BettorBroke();
+           ResetBetAmount();
             ResetRace();
             btnRestart.Enabled = false;
             btnBet.Enabled = true;
