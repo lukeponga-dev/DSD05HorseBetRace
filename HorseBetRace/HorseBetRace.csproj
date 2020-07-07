@@ -47,12 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\AllPunters\Al.cs" />
+    <Compile Include="Data\Al.cs" />
     <Compile Include="Data\Bet.cs" />
-    <Compile Include="Data\AllPunters\Bob.cs" />
-    <Compile Include="Data\AllPunters\Factory.cs" />
-    <Compile Include="Data\AllPunters\Joe.cs" />
-    <Compile Include="Data\AllPunters\Punter.cs" />
+    <Compile Include="Data\Bob.cs" />
+    <Compile Include="Data\Factory.cs" />
+    <Compile Include="Data\Joe.cs" />
+    <Compile Include="Data\Punter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,5 +112,6 @@
   <ItemGroup>
     <None Include="Resources\Horse4.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
