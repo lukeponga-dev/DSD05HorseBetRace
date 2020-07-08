@@ -78,7 +78,7 @@ namespace HorseBetRace
         private void rbAl_CheckedChanged(object sender, EventArgs e)
         {
             //set the max bet label to amount of cash punter has
-            lblMaxBet.Text = MyPunters[2].PunterName + " Max Bet Amount " + MyPunters[2].Cash.ToString();
+            lblMaxBet.Text = MyPunters[2].PunterName + " Max Bet Amount $" + MyPunters[2].Cash.ToString();
             //Show that Al is betting in the bet label
             lblBettor.Text = MyPunters[2].PunterName + " $";
             //Sets the maximum/minimum bet based of cash
@@ -89,7 +89,7 @@ namespace HorseBetRace
         private void rbBob_CheckedChanged(object sender, EventArgs e)
         {
             //set the max bet label to amount of cash punter has
-            lblMaxBet.Text = MyPunters[1].PunterName + " Max Bet Amount " + MyPunters[1].Cash.ToString();
+            lblMaxBet.Text = MyPunters[1].PunterName + " Max Bet Amount $" + MyPunters[1].Cash.ToString();
             //Show that Bob is betting in the bet label
             lblBettor.Text = MyPunters[1].PunterName + " $";
             //Sets the maximum/minimum bet based of cash
@@ -100,7 +100,7 @@ namespace HorseBetRace
         private void rbJoe_CheckedChanged(object sender, EventArgs e)
         {
             //set the max bet label to amount of cash punter has
-            lblMaxBet.Text = MyPunters[0].PunterName + " Max Bet Amount " + MyPunters[0].Cash.ToString();
+            lblMaxBet.Text = MyPunters[0].PunterName + " Max Bet Amount $" + MyPunters[0].Cash.ToString();
             //Show that Joe is betting in the bet label
             lblBettor.Text = MyPunters[0].PunterName + " $";
             //Sets the maximum/minimum bet based of cash
