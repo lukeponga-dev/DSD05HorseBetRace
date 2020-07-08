@@ -6,14 +6,12 @@
         public int Horse { get; set; } // Number of the Horse the bet is placed on
         public Punter Bettor { get; set; } // Punter who placed bet
 
-        public string GetDescription() //Return a string who placed the bet, how much the bet is, which number horse its on 
+        public string GetDescription() //Return a string who placed the bet, how much the bet is, which number horse its on
         {
-
             string description = Bettor.PunterName + " bet $" + Amount + " on Horse " + (Horse + 1);
             return description;
 
             //If amount is 0 no bet is place
-
         }
 
         public int PayOut(int winner)//The winner is winner of race if the horse won return the amount bet
@@ -21,9 +19,8 @@
             if (winner == Horse)
             {
                 return Amount;
-
             }
-            else//else negative amount bet 
+            else//else negative amount bet
 
             {
                 return -1 * Amount;

@@ -6,10 +6,13 @@ namespace HorseBetRace
     public class Horse
     {
         public string HorseName { get; set; }
+
         // Where my picture box starts
         public int StartingPosition { get; set; }
+
         public int RaceTrackLength { get; set; }
         public PictureBox Mypb { get; set; } = null;
+        public int Location { get; set; } = 0;
         public Random Rand { get; set; } // An instance of random for the random generator
 
         public bool Run(PictureBox raceTrack)

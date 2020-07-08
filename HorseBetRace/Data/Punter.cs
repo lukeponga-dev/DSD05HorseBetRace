@@ -1,6 +1,5 @@
 ﻿using System.Windows.Forms;
 
-
 namespace HorseBetRace.Data.AllPunters
 {
     public abstract class Punter
@@ -8,7 +7,7 @@ namespace HorseBetRace.Data.AllPunters
         public string NotBetYet { get; set; } = " has not placed a bet.";
         public string Busted { get; set; } = " BUSTED!";
         public abstract string PunterName { get; set; } // The punters name
-        public abstract Bet MyBet { get; set; } // An instance of Bet() that has punters bet
+        public abstract Bet MyBet { get; set; }  // An instance of Bet() that has punters bet
         public abstract int Cash { get; set; } // How much money punter has
         public abstract RadioButton MyRadioButton { get; set; } //Radiobutton
         public abstract Label MyLabel { get; set; } //Label
@@ -20,6 +19,8 @@ namespace HorseBetRace.Data.AllPunters
 
         public bool PlaceBet(int betAmount, int horseToWin) // Place a new bet and store it in my bet field
         {
+            //Place a new bet and store it
+            //return true if punter had enough money to bet
             if (Cash >= betAmount)
             {
                 MyBet = new Bet()
@@ -28,7 +29,9 @@ namespace HorseBetRace.Data.AllPunters
                     Horse = horseToWin,
                     Bettor = this
                 };
+
                 UpdateLabels();
+
                 return true;
             }
             //return false if punter did not have enough cash
@@ -37,7 +40,6 @@ namespace HorseBetRace.Data.AllPunters
                 MessageBox.Show(PunterName + @" doesn't have enough to bet");
                 return false;
             }
-
         }
     }
 }

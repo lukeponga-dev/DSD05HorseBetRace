@@ -15,6 +15,5 @@ namespace HorseBetRace.Data.AllPunters
         public override int Cash { get; set; }
         public override RadioButton MyRadioButton { get; set; }
         public override Label MyLabel { get; set; }
-
     }
 }

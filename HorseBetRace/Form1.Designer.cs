@@ -82,16 +82,16 @@
             this.panel1.Controls.Add(this.rbJoe);
             this.panel1.Location = new System.Drawing.Point(12, 358);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 108);
+            this.panel1.Size = new System.Drawing.Size(376, 108);
             this.panel1.TabIndex = 0;
             // 
             // btnBet
             // 
             this.btnBet.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnBet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBet.Location = new System.Drawing.Point(229, 48);
+            this.btnBet.Location = new System.Drawing.Point(238, 49);
             this.btnBet.Name = "btnBet";
-            this.btnBet.Size = new System.Drawing.Size(90, 40);
+            this.btnBet.Size = new System.Drawing.Size(124, 52);
             this.btnBet.TabIndex = 20;
             this.btnBet.Text = "Place Bet";
             this.btnBet.UseVisualStyleBackColor = false;
@@ -147,11 +147,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(67, 83);
+            this.label1.Location = new System.Drawing.Point(97, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Amount Horse number #";
+            this.label1.Text = "Horse number #";
             // 
             // lblBettor
             // 
@@ -167,7 +167,7 @@
             // 
             this.lblMaxBet.AutoSize = true;
             this.lblMaxBet.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMaxBet.Location = new System.Drawing.Point(110, 8);
+            this.lblMaxBet.Location = new System.Drawing.Point(145, 8);
             this.lblMaxBet.Name = "lblMaxBet";
             this.lblMaxBet.Size = new System.Drawing.Size(46, 13);
             this.lblMaxBet.TabIndex = 15;
@@ -244,9 +244,9 @@
             this.panel2.Controls.Add(this.lblBob);
             this.panel2.Controls.Add(this.lblJoe);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(346, 358);
+            this.panel2.Location = new System.Drawing.Point(394, 358);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(160, 96);
+            this.panel2.Size = new System.Drawing.Size(136, 108);
             this.panel2.TabIndex = 6;
             // 
             // lblAl
@@ -294,9 +294,9 @@
             this.pbHorse4.BackColor = System.Drawing.Color.Transparent;
             this.pbHorse4.BackgroundImage = global::HorseBetRace.MainResource.Horse4;
             this.pbHorse4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse4.Location = new System.Drawing.Point(12, 255);
+            this.pbHorse4.Location = new System.Drawing.Point(29, 255);
             this.pbHorse4.Name = "pbHorse4";
-            this.pbHorse4.Size = new System.Drawing.Size(79, 38);
+            this.pbHorse4.Size = new System.Drawing.Size(64, 36);
             this.pbHorse4.TabIndex = 5;
             this.pbHorse4.TabStop = false;
             // 
@@ -304,9 +304,9 @@
             // 
             this.pbHorse3.BackgroundImage = global::HorseBetRace.MainResource.Horse3;
             this.pbHorse3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse3.Location = new System.Drawing.Point(12, 177);
+            this.pbHorse3.Location = new System.Drawing.Point(29, 174);
             this.pbHorse3.Name = "pbHorse3";
-            this.pbHorse3.Size = new System.Drawing.Size(79, 41);
+            this.pbHorse3.Size = new System.Drawing.Size(64, 39);
             this.pbHorse3.TabIndex = 4;
             this.pbHorse3.TabStop = false;
             // 
@@ -314,9 +314,9 @@
             // 
             this.pbHorse2.BackgroundImage = global::HorseBetRace.MainResource.Horse2;
             this.pbHorse2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbHorse2.Location = new System.Drawing.Point(12, 101);
+            this.pbHorse2.Location = new System.Drawing.Point(29, 99);
             this.pbHorse2.Name = "pbHorse2";
-            this.pbHorse2.Size = new System.Drawing.Size(79, 41);
+            this.pbHorse2.Size = new System.Drawing.Size(64, 39);
             this.pbHorse2.TabIndex = 3;
             this.pbHorse2.TabStop = false;
             // 
@@ -326,9 +326,9 @@
             this.pbHorse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbHorse1.Image = global::HorseBetRace.MainResource.Horse1;
             this.pbHorse1.InitialImage = null;
-            this.pbHorse1.Location = new System.Drawing.Point(12, 21);
+            this.pbHorse1.Location = new System.Drawing.Point(29, 26);
             this.pbHorse1.Name = "pbHorse1";
-            this.pbHorse1.Size = new System.Drawing.Size(79, 41);
+            this.pbHorse1.Size = new System.Drawing.Size(64, 39);
             this.pbHorse1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbHorse1.TabIndex = 2;
             this.pbHorse1.TabStop = false;
@@ -337,9 +337,9 @@
             // 
             this.pbRaceTrack.BackgroundImage = global::HorseBetRace.MainResource.racetrack;
             this.pbRaceTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbRaceTrack.Location = new System.Drawing.Point(-5, -1);
+            this.pbRaceTrack.Location = new System.Drawing.Point(12, 1);
             this.pbRaceTrack.Name = "pbRaceTrack";
-            this.pbRaceTrack.Size = new System.Drawing.Size(657, 353);
+            this.pbRaceTrack.Size = new System.Drawing.Size(642, 338);
             this.pbRaceTrack.TabIndex = 1;
             this.pbRaceTrack.TabStop = false;
             // 
@@ -382,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 550);
+            this.ClientSize = new System.Drawing.Size(797, 550);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pbHorse4);

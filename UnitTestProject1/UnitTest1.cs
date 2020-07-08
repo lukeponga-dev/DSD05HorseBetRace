@@ -1,7 +1,6 @@
 ﻿using HorseBetRace.Data.AllPunters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using HorseBetRace;
 
 namespace UnitTestProject1
 {
