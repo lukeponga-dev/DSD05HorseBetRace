@@ -42,11 +42,11 @@
       <FileName>Data\Bet.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HorseBetRace.Form1" Collapsed="true">
+  <Class Name="HorseBetRace.FormHorseBet" Collapsed="true">
     <Position X="6.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAQAkCiAACIWABBBBQCEAAMqugAQIIAICQRgAUEgJAA=</HashCode>
-      <FileName>Form1.cs</FileName>
+      <FileName>FormHorseBet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Horse">

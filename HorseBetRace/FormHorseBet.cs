@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace HorseBetRace
 {
-    public partial class Form1 : Form
+    public partial class FormHorseBet : Form
     {
         private readonly Horse[] HorsesArray = new Horse[4];
         private readonly Punter[] MyPunters = new Punter[3];
 
-        public Form1()
+        public FormHorseBet()
         {
             InitializeComponent();
             HorsesRace();
@@ -21,13 +21,6 @@ namespace HorseBetRace
         //Setting up the data for race
 
         #region Load Data
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            btnBet.Enabled = true;
-            btnRace.Enabled = false;
-            btnRestart.Enabled = true;
-        }
 
         public void HorsesRace() // Instantiate the Horses
         {
@@ -65,6 +58,12 @@ namespace HorseBetRace
             MyPunters[2].MyRadioButton.Text = MyPunters[2].PunterName + " has $" + MyPunters[2].Cash;
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btnBet.Enabled = true;
+            btnRace.Enabled = false;
+            btnRestart.Enabled = true;
+        }
         private void NotBetYet()
         {
             lblJoe.Text = MyPunters[0].PunterName + MyPunters[0].NotBetYet;
@@ -216,6 +215,12 @@ namespace HorseBetRace
             btnRace.Enabled = true; // Enable race button
         }
 
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            // Closes the form
+            this.Close();
+        }
+
         private void btnRace_Click(object sender, EventArgs e)
         {
             // check bet amount is not more than cash
@@ -262,6 +267,22 @@ namespace HorseBetRace
             }
         }
 
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            // Enable radio buttons
+            rbJoe.Enabled = true;
+            rbBob.Enabled = true;
+            rbAl.Enabled = true;
+            // Disable timer
+            timer1.Enabled = false;
+            // Enable bet button
+            btnBet.Enabled = true;
+
+            Punters();
+            ResetBetAmount();
+            ResetRace();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Run the timer for the race and return the winner and bet results
@@ -296,28 +317,6 @@ namespace HorseBetRace
             {
                 MessageBox.Show(@"A Bet was not placed");
             }
-        }
-
-        private void btnQuit_Click(object sender, EventArgs e)
-        {
-            // Closes the form
-            this.Close();
-        }
-
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
-            // Enable radio buttons
-            rbJoe.Enabled = true;
-            rbBob.Enabled = true;
-            rbAl.Enabled = true;
-            // Disable timer
-            timer1.Enabled = false;
-            // Enable bet button
-            btnBet.Enabled = true; 
-
-            Punters();
-            ResetBetAmount();
-            ResetRace();
         }
     }
 }

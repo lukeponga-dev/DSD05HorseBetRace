@@ -56,11 +56,11 @@
     <Compile Include="Data\Factory.cs" />
     <Compile Include="Data\Joe.cs" />
     <Compile Include="Data\Punter.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormHorseBet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormHorseBet.Designer.cs">
+      <DependentUpon>FormHorseBet.cs</DependentUpon>
     </Compile>
     <Compile Include="Horse.cs" />
     <Compile Include="MainResource.Designer.cs">
@@ -70,8 +70,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormHorseBet.resx">
+      <DependentUpon>FormHorseBet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
