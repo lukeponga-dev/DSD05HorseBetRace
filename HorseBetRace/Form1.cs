@@ -19,6 +19,7 @@ namespace HorseBetRace
         }
 
         //Setting up the data for race
+
         #region Load Data
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace HorseBetRace
             HorsesArray[0] = new Horse { Mypb = pbHorse1, StartingPosition = pbHorse1.Left, HorseName = "#1", RaceTrackLength = pbRaceTrack.Width - pbHorse1.Width, Rand = new Random() };
             HorsesArray[1] = new Horse { Mypb = pbHorse2, StartingPosition = pbHorse2.Left, HorseName = "#2", RaceTrackLength = pbRaceTrack.Width - pbHorse2.Width, Rand = HorsesArray[0].Rand };
             HorsesArray[2] = new Horse { Mypb = pbHorse3, StartingPosition = pbHorse3.Left, HorseName = "#3", RaceTrackLength = pbRaceTrack.Width - pbHorse3.Width, Rand = HorsesArray[0].Rand };
-            HorsesArray[3] = new Horse {Mypb = pbHorse4, StartingPosition = pbHorse4.Left, HorseName = "#4", RaceTrackLength = pbRaceTrack.Width - pbHorse4.Width, Rand = HorsesArray[0].Rand};
+            HorsesArray[3] = new Horse { Mypb = pbHorse4, StartingPosition = pbHorse4.Left, HorseName = "#4", RaceTrackLength = pbRaceTrack.Width - pbHorse4.Width, Rand = HorsesArray[0].Rand };
         }
 
         public void LabelsClear() // Clears the labels
@@ -41,6 +42,7 @@ namespace HorseBetRace
             lblJoe.Text = "";
             lblBob.Text = "";
             lblAl.Text = "";
+            lblMaxBet.Text = "";
         }
 
         public void Punters()
@@ -51,7 +53,7 @@ namespace HorseBetRace
                 MyPunters[i] = Factory.GetAPunter(i);
             }
 
-            //set the text boxs to the classes and update radiobuttons
+            //set the labels to the classes and update radiobuttons
             MyPunters[0].MyLabel = lblJoe;
             MyPunters[0].MyRadioButton = rbJoe;
             MyPunters[0].MyRadioButton.Text = MyPunters[0].PunterName + " has $" + MyPunters[0].Cash;
@@ -76,25 +78,34 @@ namespace HorseBetRace
 
         private void rbAl_CheckedChanged(object sender, EventArgs e)
         {
+            //set the max bet label to amount of cash punter has
+            lblMaxBet.Text = MyPunters[2].PunterName + " Max Bet Amount " + MyPunters[2].Cash.ToString();
             //Show that Al is betting in the bet label
-            lblBettor.Text = MyPunters[2].PunterName;
-            //Sets the maximum bet based of cash
+            lblBettor.Text = MyPunters[2].PunterName + " $";
+            //Sets the maximum/minimum bet based of cash
+            nudCash.Minimum = 5;
             nudCash.Maximum = MyPunters[2].Cash;
         }
 
         private void rbBob_CheckedChanged(object sender, EventArgs e)
         {
+            //set the max bet label to amount of cash punter has
+            lblMaxBet.Text = MyPunters[1].PunterName + " Max Bet Amount " + MyPunters[1].Cash.ToString();
             //Show that Bob is betting in the bet label
-            lblBettor.Text = MyPunters[1].PunterName;
-            //Sets the maximum bet based of cash
+            lblBettor.Text = MyPunters[1].PunterName + " $";
+            //Sets the maximum/minimum bet based of cash
+            nudCash.Minimum = 5;
             nudCash.Maximum = MyPunters[1].Cash;
         }
 
         private void rbJoe_CheckedChanged(object sender, EventArgs e)
         {
+            //set the max bet label to amount of cash punter has
+            lblMaxBet.Text = MyPunters[0].PunterName + " Max Bet Amount " + MyPunters[0].Cash.ToString();
             //Show that Joe is betting in the bet label
-            lblBettor.Text = MyPunters[0].PunterName;
-            //Sets the maximum bet based of cash
+            lblBettor.Text = MyPunters[0].PunterName + " $";
+            //Sets the maximum/minimum bet based of cash
+            nudCash.Minimum = 5;
             nudCash.Maximum = MyPunters[0].Cash;
         }
 
@@ -147,19 +158,12 @@ namespace HorseBetRace
             {
                 MyPunters[2].MyBet.Amount = 0;
             }
-
-            btnBet.Enabled = true;
         }
 
-        public void ResetRace() //Reset labels, bet amounts and horses back to start 
+        public void ResetRace() //Reset labels, bet amounts and horses back to start
         {
             //resets the label text
             NotBetYet();
-            /*
-            MyPunters[0].MyLabel.ResetText();
-            MyPunters[1].MyLabel.ResetText();
-            MyPunters[2].MyLabel.ResetText();
-            */
 
             //resets the bet amounts to zero
             var myBet = MyPunters[0].MyBet;
@@ -174,6 +178,12 @@ namespace HorseBetRace
                     if (o != null) o.Amount = 0;
                 }
             }
+            //resets the max bet label text
+            lblMaxBet.ResetText();
+            //resets punters max bet amount to new cash amount
+            nudCash.Maximum = MyPunters[2].Cash;
+            nudCash.Maximum = MyPunters[1].Cash;
+            nudCash.Maximum = MyPunters[0].Cash;
 
             //Reset horses back to start
             foreach (Horse t in HorsesArray)
@@ -202,46 +212,58 @@ namespace HorseBetRace
             }
 
             MyPunters[punter].PlaceBet((int)nudCash.Value, (int)nudHorseNumber.Value - 1); // Updates the bet amount and horse number using the Place bet in punter class
-            btnRace.Enabled = true;
+
+            btnRace.Enabled = true; // Enable race button
         }
 
         private void btnRace_Click(object sender, EventArgs e)
         {
-            //Check if the punters have enough cash to proceed with the race if not show warning
-            if (MyPunters[0].Cash < nudCash.Value && rbJoe.Enabled)
+            // check bet amount is not more than cash
+            try
             {
-                MessageBox.Show(@"Sorry Joe doesn't have enough cash to proceed");
-                timer1.Enabled = false;
-            }
-
-            if (MyPunters[1].Cash < nudCash.Value && rbBob.Enabled)
-            {
-                MessageBox.Show(@"Sorry Bob doesn't have enough cash to proceed");
-                timer1.Enabled = false;
-            }
-
-            if (MyPunters[2].Cash < nudCash.Value && rbAl.Enabled)
-            {
-                MessageBox.Show(@"Sorry Al doesn't have enough cash to proceed");
-                timer1.Enabled = false;
-            }
-            else
-            {
-                //Reset starting positions
-                foreach (Horse t in HorsesArray)
+                if (MyPunters[0].Cash < MyPunters[0].MyBet.Amount)
                 {
-                    t.Mypb.Left = t.StartingPosition;
+                    MessageBox.Show("Joe does not have enough to proceed");
+                    btnRace.Enabled = false;
                 }
 
-                //start timer for the race
-                timer1.Enabled = true;
-                btnRace.Enabled = false;
-                btnBet.Enabled = false;
+                if (MyPunters[1].Cash < MyPunters[1].MyBet.Amount)
+                {
+                    MessageBox.Show("Bob does not have enough to proceed");
+                    btnRace.Enabled = false;
+                }
+
+                if (MyPunters[2].Cash < MyPunters[2].MyBet.Amount)
+                {
+                    MessageBox.Show("Al does not have enough to proceed");
+                    btnRace.Enabled = false;
+                }
+                else
+                {
+                    //Reset starting positions
+                    foreach (Horse t in HorsesArray)
+                    {
+                        t.Mypb.Left = t.StartingPosition;
+                    }
+                    //start timer for the race
+                    timer1.Enabled = true;
+                    // Disable bet & race buttons while racing
+                    btnBet.Enabled = false;
+                    btnRace.Enabled = false;
+                    rbJoe.Checked = false;
+                    rbBob.Checked = false;
+                    rbAl.Checked = false;
+                    ResetBetAmount();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please place all bets");
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        { 
+        {
             // Run the timer for the race and return the winner and bet results
             try
             {
@@ -249,8 +271,7 @@ namespace HorseBetRace
 
                 for (int i = 0; i < HorsesArray.Length; i++)
                 {
-                    if (HorsesArray[i].Run(pbRaceTrack)
-                    ) // use Horse.run class for race if true return a winner and stop timer event
+                    if (HorsesArray[i].Run(pbRaceTrack)) // use Horse.run class for race if true return a winner and stop timer event
                     {
                         winner = i;
                         timer1.Enabled = false;
@@ -260,7 +281,7 @@ namespace HorseBetRace
                         {
                             if (MyPunters[j].MyBet.PayOut(winner) != 0) //payout is not 0
                                 MyPunters[j].Cash += MyPunters[j].MyBet.PayOut(winner);
-                                MyPunters[j].MyRadioButton.Text = MyPunters[j].PunterName + " has $" + MyPunters[j].Cash; //Updates the radio button with new cash amount
+                            MyPunters[j].MyRadioButton.Text = MyPunters[j].PunterName + " has $" + MyPunters[j].Cash; //Updates the radio button with new cash amount
                         }
 
                         ResetRace(); // Resets the labels, bet amounts, and starting positions
@@ -285,11 +306,18 @@ namespace HorseBetRace
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
+            // Enable radio buttons
+            rbJoe.Enabled = true;
+            rbBob.Enabled = true;
+            rbAl.Enabled = true;
+            // Disable timer
+            timer1.Enabled = false;
+            // Enable bet button
+            btnBet.Enabled = true; 
+
             Punters();
-            BettorBroke();
             ResetBetAmount();
             ResetRace();
-            btnBet.Enabled = true;
         }
     }
 }
