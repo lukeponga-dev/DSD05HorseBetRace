@@ -12,13 +12,12 @@ namespace HorseBetRace
 
         public int RaceTrackLength { get; set; }
         public PictureBox Mypb { get; set; } = null;
-        public int Location { get; set; } = 0;
         public Random Rand { get; set; } // An instance of random for the random generator
 
         public bool Run(PictureBox raceTrack)
         {
             // Move forward spaces at random
-            Mypb.Left += Rand.Next(1, 10);
+            Mypb.Left += Rand.Next(1, 20);
 
             // Return true if race is won
             if (Mypb.Right > raceTrack.Right)
