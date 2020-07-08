@@ -3,36 +3,36 @@
   <Class Name="HorseBetRace.Data.AllPunters.Al" Collapsed="true">
     <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\AllPunters\Al.cs</FileName>
+      <HashCode>AAAAAAQABAgAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Al.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Data.AllPunters.Bob" Collapsed="true">
     <Position X="2.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\AllPunters\Bob.cs</FileName>
+      <HashCode>AAAAAAQABAgAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Bob.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Data.AllPunters.Factory">
     <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\AllPunters\Factory.cs</FileName>
+      <FileName>Data\Factory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Data.AllPunters.Joe" Collapsed="true">
     <Position X="5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\AllPunters\Joe.cs</FileName>
+      <HashCode>AAAAAAQABAgAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Joe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Data.AllPunters.Punter">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAQABAgAACAAAAAAAAAAAAAEEAAAAAAgABAAAAA=</HashCode>
-      <FileName>Data\AllPunters\Punter.cs</FileName>
+      <FileName>Data\Punter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Data.AllPunters.Bet">
@@ -43,7 +43,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Form1" Collapsed="true">
-    <Position X="8" Y="0.5" Width="1.5" />
+    <Position X="6.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAQAkCiAACIWABBBBQCEAAMqugAQIIAICQRgAUEgJAA=</HashCode>
       <FileName>Form1.cs</FileName>
@@ -52,7 +52,7 @@
   <Class Name="HorseBetRace.Horse">
     <Position X="0.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAgAAAAAAAAAAAAAABAAABAAAAAAAgAI=</HashCode>
+      <HashCode>gAAAAAAAAAAAAgAAAAIAAAAAAAAABAAABAAAAAAAgAI=</HashCode>
       <FileName>Horse.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -63,7 +63,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="HorseBetRace.Program" Collapsed="true">
-    <Position X="8" Y="4" Width="1.5" />
+    <Position X="6.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>

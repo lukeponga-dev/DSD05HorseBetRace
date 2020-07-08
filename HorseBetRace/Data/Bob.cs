@@ -2,7 +2,7 @@
 
 namespace HorseBetRace.Data.AllPunters
 {
-    public class Bob : Punter
+    public class Bob : Punter // Inherit from the Punter class
     {
         public override string PunterName { get; set; }
         public override Bet MyBet { get; set; }
