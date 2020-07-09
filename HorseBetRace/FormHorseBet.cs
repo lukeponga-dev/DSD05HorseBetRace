@@ -17,17 +17,22 @@ namespace HorseBetRace
             LabelsClear();
             NotBetYet();
         }
-
         //Setting up the data for race
-
         #region Load Data
 
         public void HorsesRace() // Instantiate the Horses
         {
-            HorsesArray[0] = new Horse { Mypb = pbHorse1, StartingPosition = pbHorse1.Left, HorseName = "#1", RaceTrackLength = pbRaceTrack.Width - pbHorse1.Width, Rand = new Random() };
-            HorsesArray[1] = new Horse { Mypb = pbHorse2, StartingPosition = pbHorse2.Left, HorseName = "#2", RaceTrackLength = pbRaceTrack.Width - pbHorse2.Width, Rand = HorsesArray[0].Rand };
-            HorsesArray[2] = new Horse { Mypb = pbHorse3, StartingPosition = pbHorse3.Left, HorseName = "#3", RaceTrackLength = pbRaceTrack.Width - pbHorse3.Width, Rand = HorsesArray[0].Rand };
-            HorsesArray[3] = new Horse { Mypb = pbHorse4, StartingPosition = pbHorse4.Left, HorseName = "#4", RaceTrackLength = pbRaceTrack.Width - pbHorse4.Width, Rand = HorsesArray[0].Rand };
+            HorsesArray[0] = new Horse { Mypb = pbHorse1, StartingPosition = pbHorse1.Left, HorseID = "#1", RaceTrackLength = pbRaceTrack.Width - pbHorse1.Width, Rand = new Random() };
+            HorsesArray[1] = new Horse { Mypb = pbHorse2, StartingPosition = pbHorse2.Left, HorseID = "#2", RaceTrackLength = pbRaceTrack.Width - pbHorse2.Width, Rand = HorsesArray[0].Rand };
+            HorsesArray[2] = new Horse { Mypb = pbHorse3, StartingPosition = pbHorse3.Left, HorseID = "#3", RaceTrackLength = pbRaceTrack.Width - pbHorse3.Width, Rand = HorsesArray[0].Rand };
+            HorsesArray[3] = new Horse { Mypb = pbHorse4, StartingPosition = pbHorse4.Left, HorseID = "#4", RaceTrackLength = pbRaceTrack.Width - pbHorse4.Width, Rand = HorsesArray[0].Rand };
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btnBet.Enabled = true;
+            btnRace.Enabled = false;
+            btnRestart.Enabled = true;
         }
 
         public void LabelsClear() // Clears the labels
@@ -46,6 +51,7 @@ namespace HorseBetRace
                 MyPunters[i] = Factory.GetAPunter(i);
             }
 
+            NotBetYet();
             //set the labels to the classes and update radiobuttons
             MyPunters[0].MyLabel = lblJoe;
             MyPunters[0].MyRadioButton = rbJoe;
@@ -58,54 +64,60 @@ namespace HorseBetRace
             MyPunters[2].MyRadioButton.Text = MyPunters[2].PunterName + " has $" + MyPunters[2].Cash;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            btnBet.Enabled = true;
-            btnRace.Enabled = false;
-            btnRestart.Enabled = true;
-        }
-        private void NotBetYet()
+        private void NotBetYet()//set the labels text to not placed a bet
         {
             lblJoe.Text = MyPunters[0].PunterName + MyPunters[0].NotBetYet;
             lblBob.Text = MyPunters[1].PunterName + MyPunters[1].NotBetYet;
             lblAl.Text = MyPunters[2].PunterName + MyPunters[2].NotBetYet;
         }
 
-        #endregion Load Data
+        #endregion Load Data      
+
+        //This region is for RadioButton Checks for punters to assign bettors Names.
+        //Added updown minimum = 5,  maximum = bettors cash
 
         #region Radio Buttons Checked/Changed
 
         private void rbAl_CheckedChanged(object sender, EventArgs e)
         {
-            //set the max bet label to amount of cash punter has
-            lblMaxBet.Text = MyPunters[2].PunterName + " Max Bet Amount $" + MyPunters[2].Cash.ToString();
-            //Show that Al is betting in the bet label
-            lblBettor.Text = MyPunters[2].PunterName + " $";
-            //Sets the maximum/minimum bet based of cash
-            nudCash.Minimum = 5;
-            nudCash.Maximum = MyPunters[2].Cash;
+            if (rbAl.Checked)
+            {
+                //Show that Al is betting in the bet label
+                lblBettor.Text = MyPunters[2].PunterName + " $";
+                //set the max bet label to amount of cash punter has
+                lblMaxBet.Text = MyPunters[2].PunterName + MyPunters[2].MaxBet + MyPunters[2].Cash;
+                //Sets the maximum/minimum bet based of cash
+                nudCash.Minimum = 5;
+                nudCash.Maximum = MyPunters[2].Cash;
+            }
         }
 
         private void rbBob_CheckedChanged(object sender, EventArgs e)
         {
-            //set the max bet label to amount of cash punter has
-            lblMaxBet.Text = MyPunters[1].PunterName + " Max Bet Amount $" + MyPunters[1].Cash.ToString();
-            //Show that Bob is betting in the bet label
-            lblBettor.Text = MyPunters[1].PunterName + " $";
-            //Sets the maximum/minimum bet based of cash
-            nudCash.Minimum = 5;
-            nudCash.Maximum = MyPunters[1].Cash;
+            if (rbBob.Checked)
+            {
+                //Show that Bob is betting in the bet label
+                lblBettor.Text = MyPunters[1].PunterName + " $";
+                //set the max bet label to amount of cash punter has
+                lblMaxBet.Text = MyPunters[1].PunterName + MyPunters[1].MaxBet + MyPunters[1].Cash;
+                //Sets the maximum/minimum bet based of cash
+                nudCash.Minimum = 5;
+                nudCash.Maximum = MyPunters[1].Cash;
+            }
         }
 
         private void rbJoe_CheckedChanged(object sender, EventArgs e)
         {
-            //set the max bet label to amount of cash punter has
-            lblMaxBet.Text = MyPunters[0].PunterName + " Max Bet Amount $" + MyPunters[0].Cash.ToString();
-            //Show that Joe is betting in the bet label
-            lblBettor.Text = MyPunters[0].PunterName + " $";
-            //Sets the maximum/minimum bet based of cash
-            nudCash.Minimum = 5;
-            nudCash.Maximum = MyPunters[0].Cash;
+            if (rbJoe.Checked)
+            {
+                //Show that Joe is betting in the bet label
+                lblBettor.Text = MyPunters[0].PunterName + " $";
+                //set the max bet label to amount of cash punter has
+                lblMaxBet.Text = MyPunters[0].PunterName + MyPunters[0].MaxBet + MyPunters[0].Cash;
+                //Sets the maximum/minimum bet based of cash
+                nudCash.Minimum = 5;
+                nudCash.Maximum = MyPunters[0].Cash;
+            }
         }
 
         #endregion Radio Buttons Checked/Changed
@@ -131,13 +143,11 @@ namespace HorseBetRace
             }
         }
 
-        public void GameOverCheck() // Checks to see if the game is over
+        public void GameOverCheck() // Checks to see if punter are busted and the game is over
         {
             if (MyPunters[0].Cash <= 0 && MyPunters[1].Cash <= 0 && MyPunters[2].Cash <= 0)
             {
-                MessageBox.Show(@"Game Won! Your bettors are broke!");
-                LabelsClear();
-                ResetRace();
+                MessageBox.Show(@"Game Won! Your bettors are broke! - Game Over");
                 this.Close();
             }
         }

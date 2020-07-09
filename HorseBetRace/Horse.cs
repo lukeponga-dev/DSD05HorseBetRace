@@ -5,7 +5,8 @@ namespace HorseBetRace
 {
     public class Horse
     {
-        public string HorseName { get; set; }
+        // The horse number
+        public string HorseID { get; set; }
 
         // Where my picture box starts
         public int StartingPosition { get; set; }
