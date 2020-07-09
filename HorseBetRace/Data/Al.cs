@@ -1,7 +1,6 @@
-﻿using HorseBetRace.Data.AllPunters;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace HorseBetRace.Data
+namespace HorseBetRace.Data.AllPunters
 {
     public class Al : Punter // Inherit from the Punter class
     {

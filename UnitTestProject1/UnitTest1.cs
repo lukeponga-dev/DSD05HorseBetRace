@@ -1,8 +1,7 @@
-﻿using HorseBetRace;
-using HorseBetRace.Data;
-using HorseBetRace.Data.AllPunters;
+﻿using HorseBetRace.Data.AllPunters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using HorseBetRace;
 
 namespace UnitTestProject1
 {
@@ -10,11 +9,9 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         //creating an instance of punter class
-        private Punter[] MyPunter = new Punter[3];
-
+        Punter[] MyPunter = new Punter[3];
         //creating an instance of horse class
-        private Horse MyHorse = new Horse();
-
+        Horse MyHorse = new Horse();
         private Horse horse;
 
         [TestMethod]
@@ -26,4 +23,5 @@ namespace UnitTestProject1
             Assert.AreEqual(ExpectedCash, ActualCash);
         }
     }
+    
 }

@@ -1,6 +1,4 @@
-﻿using HorseBetRace.Data.AllPunters;
-
-namespace HorseBetRace.Data
+﻿namespace HorseBetRace.Data.AllPunters
 {
     public static class Factory
     {
