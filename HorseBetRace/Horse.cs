@@ -5,19 +5,18 @@ namespace HorseBetRace
 {
     public class Horse
     {
-        // The horse number
+        // The horse ID
         public string HorseID { get; set; }
 
         // Where my picture box starts
         public int StartingPosition { get; set; }
-
         public int RaceTrackLength { get; set; }
         public PictureBox Mypb { get; set; } = null;
         public Random Rand { get; set; } // An instance of random for the random generator
 
         public bool Run(PictureBox raceTrack)
         {
-            // Move forward spaces at random
+            // Move forward 1, 20 spaces at random
             Mypb.Left += Rand.Next(1, 20);
 
             // Return true if race is won
@@ -25,7 +24,7 @@ namespace HorseBetRace
             {
                 return true;
             }
-
+            //else false
             return false;
         }
     }

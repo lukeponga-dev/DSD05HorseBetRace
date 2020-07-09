@@ -1,4 +1,6 @@
-﻿namespace HorseBetRace.Data.AllPunters
+﻿using HorseBetRace.Data.AllPunters;
+
+namespace HorseBetRace.Data
 {
     public class Bet
     {
@@ -8,8 +10,8 @@
 
         public string GetDescription() //Return a string who placed the bet, how much the bet is, which number horse its on
         {
-            string labeldescription = $"{Bettor.PunterName} bets ${Amount} on Horse #{Horse + 1}";
-            return labeldescription;
+            string description = $"{Bettor.PunterName} bets ${Amount} on Horse #{Horse + 1}";
+            return description;
 
             //If amount is 0 no bet is place
         }
