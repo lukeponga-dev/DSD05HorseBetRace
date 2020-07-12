@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace HorseBetRace.Data.AllPunters
 {
@@ -9,19 +11,29 @@ namespace HorseBetRace.Data.AllPunters
         public abstract int Cash { get; set; } // How much money punter has
         public abstract RadioButton MyRadioButton { get; set; } //Radiobutton
         public abstract Label MyLabel { get; set; } //Label
-
-        // setting the text for NotBetYet, Busted and MaxBet
-        public string NotBetYet { get; set; } = " has not placed a bet.";
-        public string Busted { get; set; } = " BUSTED!";
-        public string MaxBet { get; set; } = " Max Bet $";
-
+        public bool Busted { get; set; }
+        public Label MaxBet { get; set; }
 
         public void UpdateLabels() // Set my label to my bets description and the label on the radio button to show the punters cash
         {
-            MyLabel.Text = MyBet.GetDescription();
-            MyRadioButton.Text = $"{PunterName} has ${Cash}";
+            if (MyBet == null)
+            {
+                MyLabel.Text = string.Format("{0} hasn't placed any bets", PunterName);
+            }
+            else
+            {
+                MyLabel.Text = MyBet.GetDescription();
+            }
+            if (Cash == 0)
+            {
+                Busted = true;
+                MyLabel.Text = string.Format("BUSTED!");
+                MyRadioButton.Enabled = false;
+                MyLabel.ForeColor = Color.Red;
+            }
+            MyRadioButton.Text = String.Format("{0} has ${1}", PunterName, Cash);
+            MaxBet.Text = string.Format("Max bet ${0}", Cash);
         }
-
 
         public void PlaceBet(int betAmount, int horseToWin) // Place a new bet and store it in my bet field
         {
@@ -32,10 +44,14 @@ namespace HorseBetRace.Data.AllPunters
             }
             else //else place a new bet and store it
             {
-                MyBet = new Bet {Amount = betAmount, Horse = horseToWin, Bettor = this};
+                MyBet = new Bet { Amount = betAmount, Horse = horseToWin, Bettor = this };
                 UpdateLabels();
             }
         }
 
+        public void Collect(int Winner)
+        {
+            Cash += MyBet.PayOut(Winner);
+        }
     }
 }

@@ -8,10 +8,19 @@
 
         public string GetDescription() //Return a string who placed the bet, how much the bet is, which number horse its on
         {
-            string labeldescription = $"{Bettor.PunterName} bets ${Amount} on Horse #{Horse + 1}";
-            return labeldescription;
+            string description = "";
 
-            //If amount is 0 no bet is place
+            if (Amount > 0)
+            {
+                description = string.Format("{0} bets {1} on Horse #{2}",
+                    Bettor.PunterName, Amount, Horse + 1);
+            }
+            else
+            {
+                description = string.Format("{0} hasn't placed any bets",
+                    Bettor.PunterName);
+            }
+            return description;
         }
 
         public int PayOut(int winner)//The winner is winner of race if the horse won return the amount bet

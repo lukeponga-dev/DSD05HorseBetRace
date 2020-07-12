@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HorseBetRace
@@ -9,24 +10,39 @@ namespace HorseBetRace
         public string HorseID { get; set; }
 
         // Where my picture box starts
-        public int StartingPosition { get; set; }
+        public static int StartingPosition { get; set; }
 
-        public int RaceTrackLength { get; set; }
+        public static int RaceTrackLength { get; set; }
         public PictureBox Mypb { get; set; } = null;
-        public Random Rand { get; set; } // An instance of random for the random generator
+        public int Location { get; set; } = 0;
+        public static Random Rand { get; set; } = new Random(); // An instance of random for the random generator
 
-        public bool Run(PictureBox raceTrack)
+        public static bool Run(Horse obj)
         {
-            // Move forward spaces at random
-            Mypb.Left += Rand.Next(1, 20);
+            int distance = Rand.Next(2, 6);
+            if (obj.Mypb != null)
+                obj.MoveHorse(distance);
 
-            // Return true if race is won
-            if (Mypb.Right > raceTrack.Right)
+            obj.Location += distance;
+            if (obj.Location >= (RaceTrackLength - StartingPosition))
             {
                 return true;
             }
 
             return false;
+        }
+
+        public void MoveHorse(int distance)
+        {
+            Point P = Mypb.Location;
+            P.X += distance;
+            Mypb.Location = P; // move horses
+        }
+
+        public void TakeStartingPosition()
+        {
+            MoveHorse(-Location); //reset horse location to start
+            Location = 0;
         }
     }
 }
