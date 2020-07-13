@@ -50,19 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Al.cs" />
-    <Compile Include="Data\Bet.cs" />
-    <Compile Include="Data\Bob.cs" />
-    <Compile Include="Data\Factory.cs" />
-    <Compile Include="Data\Joe.cs" />
-    <Compile Include="Data\Punter.cs" />
+    <Compile Include="Classes\Al.cs" />
+    <Compile Include="Classes\Bet.cs" />
+    <Compile Include="Classes\Bob.cs" />
+    <Compile Include="Classes\Factory.cs" />
+    <Compile Include="Classes\Joe.cs" />
+    <Compile Include="Classes\Punter.cs" />
     <Compile Include="FormHorseBet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHorseBet.Designer.cs">
       <DependentUpon>FormHorseBet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Horse.cs" />
+    <Compile Include="Classes\Horse.cs" />
     <Compile Include="MainResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

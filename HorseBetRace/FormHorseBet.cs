@@ -21,10 +21,10 @@ namespace HorseBetRace
             // Instantiate the Horses
             Horse.StartingPosition = pbHorse1.Right - pbRaceTrack.Left;
             Horse.RaceTrackLength = pbRaceTrack.Right - pbHorse1.Left; //fixing length of race - till finish line
-            HorsesArray[0] = new Horse {Mypb = pbHorse1, HorseID = "#1"};
-            HorsesArray[1] = new Horse {Mypb = pbHorse2, HorseID = "#2"};
-            HorsesArray[2] = new Horse {Mypb = pbHorse3, HorseID = "#3"};
-            HorsesArray[3] = new Horse {Mypb = pbHorse4, HorseID = "#4"};
+            HorsesArray[0] = new Horse { Mypb = pbHorse1, HorseID = "#1" };
+            HorsesArray[1] = new Horse { Mypb = pbHorse2, HorseID = "#2" };
+            HorsesArray[2] = new Horse { Mypb = pbHorse3, HorseID = "#3" };
+            HorsesArray[3] = new Horse { Mypb = pbHorse4, HorseID = "#4" };
             //create an array of punters and instantiate Factory classes
             for (var i = 0; i < 3; i++) MyPunters[i] = Factory.GetAPunter(i);
 
@@ -142,8 +142,8 @@ namespace HorseBetRace
                 punter = 1;
             else if (rbAl.Checked) punter = 2;
 
-            MyPunters[punter].PlaceBet((int) nudCash.Value,
-                (int) nudHorseNumber.Value -
+            MyPunters[punter].PlaceBet((int)nudCash.Value,
+                (int)nudHorseNumber.Value -
                 1); // Updates the bet amount and horse number using the Place bet in punter class
             MyPunters[punter].UpdateLabels();
             btnRace.Enabled = true; // Enable race button
