@@ -83,6 +83,10 @@ namespace HorseBetRace
                 {
                     SetUpRace(); //restart game
                     ResetRace();
+                    rbJoe.Enabled = true;
+                    rbBob.Enabled = true;
+                    rbAl.Enabled = true;
+
                 }
                 else
                 {
