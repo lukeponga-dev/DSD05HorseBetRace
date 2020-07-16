@@ -53,6 +53,7 @@ namespace HorseBetRace
             //Sets the maximum/minimum bet based of cash
             nudCash.Minimum = 5;
             nudCash.Maximum = MyPunters[2].Cash;
+            lblBettor.Text = MyPunters[2].PunterName;
         }
 
         private void rbBob_CheckedChanged(object sender, EventArgs e)
@@ -60,6 +61,7 @@ namespace HorseBetRace
             //Sets the maximum/minimum bet based of cash
             nudCash.Minimum = 5;
             nudCash.Maximum = MyPunters[1].Cash;
+            lblBettor.Text = MyPunters[1].PunterName;
         }
 
         private void rbJoe_CheckedChanged(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace HorseBetRace
             //Sets the maximum/minimum bet based of cash
             nudCash.Minimum = 5;
             nudCash.Maximum = MyPunters[0].Cash;
+            lblBettor.Text = MyPunters[0].PunterName;
         }
 
         public void GameOverCheck() // Checks to see if punter are busted and the game is over
@@ -86,7 +89,6 @@ namespace HorseBetRace
                     rbJoe.Enabled = true;
                     rbBob.Enabled = true;
                     rbAl.Enabled = true;
-
                 }
                 else
                 {
